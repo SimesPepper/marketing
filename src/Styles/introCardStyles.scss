@@ -1,0 +1,109 @@
+@keyframes bounce {
+    0% {
+        // top: 80%;
+        border-color: red;
+    }
+    50% {
+        // top: 80.5%;
+        border-color: green;
+    }
+   
+    100% {
+        // top: 80.5%;
+        border-color: yellow;
+    }
+   
+}
+
+@keyframes bottle_tilt {
+
+    0% {
+        background-image: url('../img/white_logo.png');
+    }
+    50% {
+        background-image: url('../img/simes_bottle_burned.png');
+    }
+    100% {
+        background-image: url('../img/simes_bottle_top_burned.png');
+
+    }
+}
+
+.intro_card_div{
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/gray_pepper.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top;
+    background-size: 100%;
+    position: absolute;
+    overflow: hidden;
+    
+
+    .cta {
+        color: white;
+        position: absolute;
+        top: 80%;
+        left: 70%;
+        background: black;
+        opacity: .5;
+        padding: 1%;
+        font-size: 3.5rem;
+        border: 3px solid white;
+        border-radius: 50px;
+        font-family: 'Oregano', cursive;
+        cursor: pointer;
+        word-spacing: 10px;
+        transition: all .4s ease-in-out;
+        box-shadow: 1px 1px 50px 15px black;
+        text-shadow: 5px 5px 20px black;
+        animation: bounce 2s linear 2s infinite alternate;
+
+        
+
+        
+
+        &:hover {
+            
+            transition: all .4s  ease-in-out 0s;
+            opacity: 1;
+            animation: none;
+            color: green;
+            border-color: red;
+            
+            
+            .i {
+                color: red;
+                transition: all 0.4s ease 0s ;
+            }
+            
+        }
+    }
+
+    // 
+
+    .bottle_logo {
+        width: 25%;
+        position: absolute;
+        top: 15%;
+        right: 45%;
+        cursor: pointer;
+        height: 50vh;
+        background-image: url('../img/white_logo.png');
+        background-repeat: no-repeat;
+        background-size: 90%;
+        transition: all .3s ease-in-out;
+
+
+        &:hover {
+            background-image: url('../img/simes_bottle_top_burned.png');
+            transition: all .5s ease-in-out;
+            width: 26%;
+        }
+
+       
+        
+    }
+
+}

@@ -1,0 +1,208 @@
+@keyframes jar_enter {
+    0% {
+        width: 300%;
+        visibility: visible;
+        
+    }
+    25% {
+        width: 100%;
+        visibility: visible;
+
+    }
+    50% {
+        width: 70%;
+        visibility: visible;
+
+    }
+    75% {
+        width: 40%;
+        visibility: visible;
+
+    }
+    100% {
+        width: 20%;
+        visibility: visible;
+
+    }
+}
+
+@keyframes jar1_split_left {
+    0% {
+        left: 40%;
+        opacity: 0;
+    }
+    25% {
+        left: 32%;
+        opacity: .25;
+    }
+    50% {
+        left: 25%;
+        opacity: .5;
+
+    }
+    75% {
+        left: 18%;
+        opacity: .75;
+
+    }
+    100% {
+        left: 10%;
+        opacity: 1;
+
+    }
+}
+@keyframes jar3_split_right {
+    0% {
+        right: 40%;
+        opacity: 0;
+
+    }
+    25% {
+        right: 32%;
+        opacity: .25;
+
+    }
+    50% {
+        right: 25%;
+        opacity: .5;
+
+    }
+    75% {
+        right: 18%;
+        opacity: .75;
+
+    }
+    100% {
+        right: 10%;
+        opacity: 1;
+
+    }
+}
+
+.picture_window {
+    width: 100%;
+    background-image: url('../img/dry-flavors-herbs.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+
+   .container {
+       position: absolute;
+       z-index: 2;
+       height: 100%;
+       width: 100vw;
+       display: flex;
+       flex-direction: column;
+       justify-content: space-around;
+       align-items: center;
+
+     
+            width: 100%;
+        .jar {
+            cursor: pointer;
+            width: 40%;
+            position: absolute;
+            bottom: 27%;
+            visibility: visible;
+            right: 40%; 
+          
+
+            &:hover {
+                width: 21.5%;
+                bottom: 24%;
+            }
+        }
+
+        .jar1 {
+            left: 40%;
+          
+
+
+        }
+
+        .jar2 {
+            right: 40%;
+        
+
+        }
+
+        .jar3 {
+            right: 40%;
+           
+
+
+        }
+       
+
+        h1 {
+            font-size: 6.5rem;
+            // width: 75%;
+            text-align: center;
+            // background: black;
+            color: black;
+            border-bottom: 10px solid black;
+            box-shadow: 0 2px 0 white;
+            border-radius: 10px;
+            // opacity: .5;
+            position: relative;
+            font-family: 'Oregano', cursive;
+            text-shadow: 3px 1px 1px white;
+            word-spacing: 25px;
+
+            span {
+                font-size: 6rem;
+            }
+        }
+
+        h2 {
+            font-size: 5.5rem;
+            color: black;
+            border-top: 10px solid black;
+            box-shadow: 0 -2px 0 white;
+            border-radius: 10px;
+            font-family: 'Oregano', cursive;
+            word-spacing: 25px;
+            text-shadow: 3px 1px 1px white;
+
+        }
+
+        .three {
+            z-index: -1;
+            position: absolute;
+            left: -11%;
+            top: -130%;
+            font-size: 25rem;
+            transform: rotate(30deg);
+            color: #418B41;
+            text-shadow: 5px 15px 1px black;
+        }
+
+        .exclaim {
+            position: absolute;
+            bottom: 8%;
+
+            // color: red;
+            font-size: 10rem;
+            // text-shadow: 4px 5px 1px black;
+        }
+
+   } 
+    .top_index {
+        color: red;
+        z-index: 2;
+        opacity: 1;
+    }
+
+    .overlay {
+        z-index: 1;
+        height: 100%;
+        width: 100%;
+        background: gray;
+        opacity: .5;
+    }
+}
