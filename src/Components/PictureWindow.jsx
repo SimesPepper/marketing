@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
+import { makeStyles } from '@material-ui/core/styles';
 import { Controller, Scene } from 'react-scrollmagic';
 import { Tween, Timeline } from 'react-gsap';
 
@@ -36,7 +36,7 @@ function rand() {
   }));
 
 
-export default _ => {
+export default ({ handlePurchase, products }) => {
 
     const classes = useStyles();
   // getModalStyle is not a pure function, we roll the style only on the first render
@@ -44,9 +44,9 @@ export default _ => {
   const [open, setOpen] = useState(false);
   const [pepperState, setPepperState] = useState()
 
-  const handleOpen = pepper => {
+  const handleOpen = _ => {
     setOpen(true);
-    setPepperState(pepper)
+    
   };
 
   const handleClose = () => {
@@ -136,7 +136,10 @@ export default _ => {
                 onClose={handleClose}
             >
                 <div style={modalStyle} className={classes.paper}>
-                <NewModal pepper={pepperState} />
+                <NewModal 
+                    products={ products } 
+                    handlePurchase={ handlePurchase }
+                />
 
                 </div>
             </Modal>

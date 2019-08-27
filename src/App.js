@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Controller, Scene } from 'react-scrollmagic';
 import { Tween, Timeline } from 'react-gsap';
+import { toast } from 'react-toastify';
 import styled from 'styled-components';
+import Axios from 'axios';
 
 
 import './Styles/App.scss';
@@ -11,6 +13,22 @@ import PictureWindow from './Components/PictureWindow';
 import Contact from './Components/Contact'
 
 function App() {
+  const [ products ] = useState(
+    {
+      name: 'simes mild',
+      price: 7.99,
+      description: 'simes mild chilli sauce'
+    },
+  )
+
+  const handlePurchase = async (token, address) => {
+    const res = await Axios.post('localhost:3003/checkout', { token, products })
+    const { status } = res.data;
+
+    if(status === 'success') toast('Success! Check email for details')
+    toast('Something went wrong', { type: "error"})
+  }
+
   return (
     <div className="app">
       
@@ -30,13 +48,23 @@ function App() {
             from={{ x: '-100%' }}
             to={{ x: '0%' }}
           >
-            <section className="panel turqoise"><MiddleCard /></section>
+            <section className="panel turqoise">
+              <MiddleCard 
+                
+              />
+            </section>
           </Tween>
           <Tween
             from={{ y: '-100%' }}
             to={{ y: '0%' }}
           >
-            <section className="panel green"><PictureWindow /> </section>
+            <section className="panel green">
+              <PictureWindow 
+                product={ products }
+                handlePurchase={ handlePurchase }
+              /> 
+              
+            </section>
           </Tween>
           <Tween
             from={{ y: '1600%' }}

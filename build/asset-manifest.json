@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1dde3351.chunk.css",
+    "main.js": "/static/js/main.80282905.chunk.js",
+    "main.js.map": "/static/js/main.80282905.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/js/2.73b85858.chunk.js": "/static/js/2.73b85858.chunk.js",
+    "static/js/2.73b85858.chunk.js.map": "/static/js/2.73b85858.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.08746a223247d233ea9600f4b97a4ba6.js": "/precache-manifest.08746a223247d233ea9600f4b97a4ba6.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.1dde3351.chunk.css.map": "/static/css/main.1dde3351.chunk.css.map",
+    "static/media/contact.scss": "/static/media/background-cayenne-chili-1091778.14a903e0.jpg",
+    "static/media/pictureWindow.scss": "/static/media/dry-flavors-herbs.10f1d129.jpg",
+    "static/media/introCardStyles.scss": "/static/media/simes_bottle_top_burned.edebbe86.png",
+    "static/media/image_burned.png": "/static/media/image_burned.45563178.png",
+    "static/media/white_logo.png": "/static/media/white_logo.22b189eb.png"
+  }
+}
