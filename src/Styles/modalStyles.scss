@@ -3,86 +3,60 @@
     flex-direction: column;
 
 
-    .info_div {
-        display: flex;
+    img {
+        width: 85%;
+        align-self: center;
+    }
 
-        img {
-            width: 55%;
-        }
+    .display {
+        // border: 1px solid rebeccapurple;
+        text-align: center;
+        font-size: 3.5rem;
+    }
 
-        .info {
-            width: 44%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            // padding: 1%;
-            
-        }
+    p {
+        font-size: 1.5rem;
+        padding: 3%;
+        text-align: center;
+    }
 
-        .modal_display_name {
-            font-size: 1.75rem;
-            font-weight: 700;
-        }
 
-        .modal_roll {
-            font-size: 1.5rem;
-            opacity: .5;
-
-           
-        }
-
-        .modal_icon_container {
-            display: flex;
-            justify-content: space-around;
-            width: 100%;
-            align-self: flex-end;
-            margin-top: 12%;
-            
-            .icon_div {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border: 1px solid black;
-                width: 20%;
-                height: 5vh;
-                border-radius: 50px;
-                background: #5B4EFF;
-                opacity: .9;
-
-                &:hover {
-
-                    opacity: 1;
-                }
-
-                .modal_icon {
-                    color: white;
-                    cursor: pointer;
-
-                    
-                }
-            }
-        }
+    .checkout, .add_to_cart {
+        color: black;
+        border: 1px solid black;
+        border-radius: 15px;
+        width: 100%;
+        margin-top: 2%;
 
     }
 
-    .bio {
-        display: flex;
-        justify-content: center;
-        align-items: center; 
-        padding: 0 5%;
+    .add_to_cart {
+        border-color: dodgerblue;
+        transition: all 0.3s ease-in-out;
 
-        .member_quote {
-
-            font-size: 2rem;
-        }
-
-        .member_bio {
-
-            font-size: 1.5rem;
+        &:hover {
+            background: dodgerblue;
+            color: white;
+            transition: all 0.3s ease-in-out;
 
         }
-        
     }
 
+    .checkout {
+        border-color: green;
+        transition: all 0.3s ease-in-out;
+
+        &:hover{
+
+            background: green;
+            color: white;
+            transition: all 0.3s ease-in-out;
+        }
+    }
+
+    .total {
+        font-size: 2.5rem;
+        margin: 2% 0;
+    }
     
 }

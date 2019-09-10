@@ -4,10 +4,9 @@
     // height: 100%;
     // width: 100%;
     // position: absolute;
-    
+    // overflow: scroll;
     display: flex;
     // flex-direction: column;
-    border: .5px solid red;
     font-family: 'Oregano', cursive;
     background: white;
 
@@ -15,13 +14,15 @@
 
     p {
         width: 55%;
-        font-size: 2.5rem;
+        // height: 100vh;
+        font-size: 2rem;
         background: white;
+        text-align: justify;
         line-height: 2;
         word-spacing: 5px;
-        margin: 5.5% 2% 2% 5%;
-        padding: 2%;
-        border-left: 10px solid #418B41;
+        margin-top: 5%;
+        padding: 5%;
+        border-right: 10px solid #418B41;
         border-radius: 10px;
         
         // border-radius: 50%;
@@ -68,6 +69,33 @@
 
         
 
+    }
+
+    @media (max-width: 700px) {
+        flex-direction: column;
+
+        p {
+            width: 100%;
+            font-size: 1.5rem;
+            margin: auto;
+            border: none;
+            
+        }
+
+        .statement {
+            width: 100%;
+            padding-bottom: 5%;
+
+            .middle_logo {
+                margin: 2% auto;
+                width: 35%;;
+
+            }
+            
+            h3 {
+                font-size: 1.5rem;
+            }
+        }
     }
 }
 

@@ -1,0 +1,138 @@
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+.review_main_div {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    // background: black;
+    // opacity: .4;
+    // background-image: url('../img/pepperoni-2936530_640.jpg');
+    // background-attachment: fixed;
+    // background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+
+    h1 {
+        color: white;
+        font-family: 'Finger Paint', cursive;
+        text-shadow: 1px 5px 15px black;
+        font-size: 3rem;
+        margin: 0;
+        position: absolute;
+        top: 15%;
+        left: 15%;
+
+    }
+
+    .review {
+        border: 2px solid black;
+        background-image: url('../img/hot-peppers.jpg');
+        border-radius: 15px;
+        margin-left: 25%;
+    // background-position: top;
+        height: 70%;
+        width: 20%;
+        display: flex;
+        flex-wrap: wrap;
+        // flex-direction: column;
+        // justify-content: flex-end;
+        // overflow: scroll;
+
+        &::-webkit-scrollbar {
+            display: none;
+           
+            
+        }
+
+        .review_display {
+            overflow: scroll;
+            height: 80%;
+
+            &::-webkit-scrollbar {
+                display: none;
+               
+                
+            }
+        }
+
+        .review_div {
+            // width: 40%;
+            opacity: .85;
+            // font-size: 3rem;
+        }
+    }
+
+
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 2%;
+        position: relative;
+
+        textarea {
+            height: 10vh;
+            padding-right: 20%;
+            padding-top: 5%;
+            padding-left: 2%;
+            opacity: .8;
+            // background: black;
+            // font-family: "FontAwesome", "<<Next Font for words>>";
+            font-size: 1.5rem;
+            // display: flex;
+            // text-align: center;
+            // flex-direction: row-reverse;
+            // overflow: scroll;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            
+        }
+
+        i {
+            position: absolute;
+            // color:  transparent;
+            right: 7%;
+            bottom: 30%;
+            transform: rotate(70deg);
+            text-shadow: 3px 1px 7px green;
+            transition: all 0.3s ease;
+            font-size: 3rem;
+            cursor: pointer;
+            &:hover {
+                text-shadow: 3px 1px 7px black;
+                transition: all 0.3s ease;
+                color: green;
+                transform: rotate(10deg);
+            }
+        }
+        
+    }
+
+    @media (max-width: 700px ) {
+
+        h1 {
+            font-size: 2rem;
+            margin: 3%;
+            top: -10%;
+            left: 5%;
+            text-align: center;
+        }
+        .review {
+            width: 100%;
+            height: 85rem;
+            margin-left: 0;
+            
+
+
+
+        }
+    }
+
+}

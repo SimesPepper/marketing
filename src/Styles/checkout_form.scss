@@ -1,0 +1,58 @@
+form {
+    display: flex;
+    flex-direction: column;
+    // border: 1px solid red;
+
+    input{
+        border: none;
+        border-bottom: 1px solid black;
+        margin: 5% auto;
+        width: 100%;
+        font-size: 1.2rem;
+        font-family: 'Oregano', cursive;
+        
+
+        &:focus{
+            outline: none;
+        }
+        
+    }
+
+    
+
+    .city_state{
+        display: flex;
+        
+        margin-bottom: 5%;
+        input{
+            width: 45%;
+        }
+
+        
+    }
+
+    button{
+        width: 100%;
+        color: green;
+        background: white;
+        font-size: 2rem;
+        border-color: green;
+        border-radius: 15px;
+        margin: 15% auto 2% auto;
+        box-shadow: none;
+        outline: none;
+        transition: all 0.3s ease-in-out;
+
+
+        &:hover {
+            background: green;
+            color: white;
+            transition: all 0.3s ease-in-out;
+
+        }
+
+        &:disabled{
+            background: gray;
+        }
+    }
+}

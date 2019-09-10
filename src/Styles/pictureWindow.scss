@@ -1,83 +1,3 @@
-@keyframes jar_enter {
-    0% {
-        width: 300%;
-        visibility: visible;
-        
-    }
-    25% {
-        width: 100%;
-        visibility: visible;
-
-    }
-    50% {
-        width: 70%;
-        visibility: visible;
-
-    }
-    75% {
-        width: 40%;
-        visibility: visible;
-
-    }
-    100% {
-        width: 20%;
-        visibility: visible;
-
-    }
-}
-
-@keyframes jar1_split_left {
-    0% {
-        left: 40%;
-        opacity: 0;
-    }
-    25% {
-        left: 32%;
-        opacity: .25;
-    }
-    50% {
-        left: 25%;
-        opacity: .5;
-
-    }
-    75% {
-        left: 18%;
-        opacity: .75;
-
-    }
-    100% {
-        left: 10%;
-        opacity: 1;
-
-    }
-}
-@keyframes jar3_split_right {
-    0% {
-        right: 40%;
-        opacity: 0;
-
-    }
-    25% {
-        right: 32%;
-        opacity: .25;
-
-    }
-    50% {
-        right: 25%;
-        opacity: .5;
-
-    }
-    75% {
-        right: 18%;
-        opacity: .75;
-
-    }
-    100% {
-        right: 10%;
-        opacity: 1;
-
-    }
-}
 
 .picture_window {
     width: 100%;
@@ -90,6 +10,9 @@
     flex-direction: column;
     justify-content: center;
     position: relative;
+    border: 2px solid salmon;
+
+   
 
    .container {
        position: absolute;
@@ -101,20 +24,54 @@
        justify-content: space-around;
        align-items: center;
 
-     
+       .content_display {
+        height: 1vh;
+        width: 50%;
+        text-align: center;
+        font-size: 6rem;
+        font-weight: 700;
+        text-shadow: 0 1px 0 black,
+               0 2px 0 black,
+               0 3px 0 black,
+               0 4px 0 black,
+               0 5px 0 black,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+        transition: all 0.3s ease;
+
+        p {
+            margin-top: -2%;
+        }
+        
+        }
+
+       .animation_div {
+        // position: relative;'
+            border: 1px solid black;
             width: 100%;
+        
+       }
+            
         .jar {
             cursor: pointer;
-            width: 40%;
+            // width: 40%;
             position: absolute;
             bottom: 27%;
-            visibility: visible;
             right: 40%; 
+            transition: all 0.3s ease;
           
 
             &:hover {
-                width: 21.5%;
-                bottom: 24%;
+                width: 25%;
+                border-bottom: 15px solid green;
+                box-shadow: 0px 5px 1px black;
+                transition: all 0.3s ease-in-out;
+                border-radius: 10px;
             }
         }
 
@@ -140,7 +97,7 @@
        
 
         h1 {
-            font-size: 6.5rem;
+            font-size: 4rem;
             // width: 75%;
             text-align: center;
             // background: black;
@@ -160,7 +117,7 @@
         }
 
         h2 {
-            font-size: 5.5rem;
+            font-size: 4rem;
             color: black;
             border-top: 10px solid black;
             box-shadow: 0 -2px 0 white;
@@ -184,11 +141,8 @@
 
         .exclaim {
             position: absolute;
-            bottom: 8%;
-
-            // color: red;
+            bottom: 1%;
             font-size: 10rem;
-            // text-shadow: 4px 5px 1px black;
         }
 
    } 
@@ -204,5 +158,86 @@
         width: 100%;
         background: gray;
         opacity: .5;
+    }
+
+    @media (max-width: 700px) {
+
+        .container {
+            width: 100%;
+            border: 2px solid lawngreen;
+
+           
+            .jar {
+                position: initial;
+                width: 5%;
+            }
+            
+
+            h1 {
+                font-size: 3rem;
+                border: none;
+                box-shadow: none;
+
+            }
+
+            .image_div {
+                // border: 2px solid saddlebrown;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                height: 50vh;
+                width: 60%;
+                // overflow: hidden;
+                img {
+                    width: 70%;
+                    align-self: center;
+                }
+
+                p {
+                    border: 2px solid black;
+                    border-radius: 15px;
+                    display: flex;
+                    justify-content: center;
+                    font-size: 3rem;
+                    font-weight: 700;
+                    text-shadow: 1px 1px 5px black;
+                    transition: all 0.3s ease-in-out;
+
+                    
+
+                    
+                }
+
+                .hot {
+                    color: red;
+                    &:hover {
+                        border: 4px solid red;
+                        background: white;
+                    }
+                }
+                .medium {
+                    color: yellow;
+                    &:hover {
+                        border: 4px solid yellow;
+                        background: white;
+                    }
+                }
+                .mild {
+                    color: green;
+                    &:hover {
+                        border: 4px solid green;
+                        background: white;
+                    }
+                }
+            }
+
+            .three {
+                display: none;
+                
+            }
+            .exclaim {
+                font-size: 3rem;
+            }
+        }
     }
 }

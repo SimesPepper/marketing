@@ -1,12 +1,14 @@
-import React from 'react';
-
-import Reviews from './Reviews';
+import React, { useState, useEffect } from 'react';
 import Footer from './Footer';
 import '../Styles/contact.scss';
 
 
+
 export default _ => {
 
+   
+
+    
     return (
         <div className="contact_div bordeaux">
             <div className="contact component_container">
@@ -14,7 +16,7 @@ export default _ => {
                 <div className="contact_text">
                     <h2>GET IN TOUCH</h2>
                     <h3>
-                        Interested in doing business with <span class="simes_span" >S<span class="i">i</span>'Me's Pepper</span>?
+                        Interested in doing business with <span className="simes_span" >S<span className="i">i</span>'Me's Pepper</span>?
                     </h3>
                     <p>
 
@@ -29,18 +31,15 @@ export default _ => {
                     
                     <div className="contact_info">
                         <p>St.Paul, MN, USA</p>
-                        <a href='mailto:Support@Simespepper.com?Subject=sims testing' className="sims_email_link">Support@<span className="simes_span" >S<span class="i">i</span>mespepper</span>.com</a>
+                        <a href="mailto:Simespepper@gmail.com?Subject=Si'me's pepper" className="sims_email_link"><span className="simes_span" >S<span class="i">i</span>mespepper</span>@gmail.com</a>
                         <div className="social_media">
-                            <i className="fab fa-instagram fa-2x instagram_logo"/>
+                            <a href="https://www.instagram.com/simes.pepper/" target="_blank"><i className="fab fa-instagram fa-5x instagram_logo"/></a>
                         </div>
                     </div>
                 </div>
-                <div className="review">
-                    <h1>LEAVE US YOUR THOUGHTS</h1>
-                    <Reviews />
-                </div>
+                
             </div>
-            <Footer />
+            
         </div>
     )
 }

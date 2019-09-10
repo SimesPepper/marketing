@@ -1,0 +1,48 @@
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 2%;
+    position: relative;
+
+    textarea {
+        height: 10vh;
+        padding-right: 20%;
+        padding-top: 5%;
+        padding-left: 2%;
+        opacity: .8;
+        // background: black;
+        // font-family: "FontAwesome", "<<Next Font for words>>";
+        font-size: 1.5rem;
+        // display: flex;
+        // text-align: center;
+        // flex-direction: row-reverse;
+        // overflow: scroll;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        
+    }
+
+    i {
+        position: absolute;
+        // color:  transparent;
+        right: 7%;
+        bottom: 30%;
+        transform: rotate(70deg);
+        text-shadow: 3px 1px 7px green;
+        transition: all 0.3s ease;
+        font-size: 3rem;
+        cursor: pointer;
+        &:hover {
+            text-shadow: 3px 1px 7px black;
+            transition: all 0.3s ease;
+            color: green;
+            transform: rotate(10deg);
+        }
+    }
+    
+}
