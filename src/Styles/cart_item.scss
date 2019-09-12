@@ -1,0 +1,29 @@
+.cart_item_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    p{
+        font-size: 1.3rem;
+        color: green;
+        margin: 2% auto;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .item_container {
+        border-top: 1px solid black;
+        .cart_delete_button{
+            border: 1px solid red;
+            border-radius: 15px;
+            color: red;
+            font-size: 1rem;
+            padding: 1%;
+
+            &:hover {
+                background: red;
+                color: white;
+
+            }
+        }
+    }
+}

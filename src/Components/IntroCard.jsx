@@ -6,31 +6,24 @@ import '../Styles/introCardStyles.scss';
 import Header from './Header';
 import MiddleCard from './MiddleCard';
 
-export default _ => {
+export default props => {
 
     const mobile = 700;
     const desktop = 701;
 
     return (
         <div className="intro_card_div component_container">
+
             <MediaQuery maxWidth={mobile}>
-            <div className="bottle_logo" /> 
-                <div className="cta">
-                    <span className="simes_span">
-                        SP
-                        <span className="i">
-                            I
-                        </span>
-                        CE
-                    </span> 
-                        UP YOUR L
-                    <span className="i">
-                        I
-                    </span>FE!
-                </div>
+                <div className="bottle_logo" /> 
             </MediaQuery>
+
             <MediaQuery minWidth={desktop}>
-                <Header />
+                <Header 
+                    cart={ props.cart } 
+                    setCart={ props.setCart }
+                    history={ props.history }
+                />
                 <div className="bottle_logo" /> 
                 {/* <div className="cta">
                     <span className="simes_span">

@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "815dcdd8d356bd5ddb6945a825482d83",
+    "revision": "5b824c22f06ed46ff8c6754f9458d63a",
     "url": "/index.html"
   },
   {
-    "revision": "228ffa8216d96d2d0586",
-    "url": "/static/css/main.1dde3351.chunk.css"
+    "revision": "d2f5c08b3e2f8e302992",
+    "url": "/static/css/main.e700b963.chunk.css"
   },
   {
-    "revision": "c2cab537579d3855028e",
-    "url": "/static/js/2.73b85858.chunk.js"
+    "revision": "e5b0ae7f72d4f0c3ee9e",
+    "url": "/static/js/2.12aae2c2.chunk.js"
   },
   {
-    "revision": "228ffa8216d96d2d0586",
-    "url": "/static/js/main.80282905.chunk.js"
+    "revision": "d2f5c08b3e2f8e302992",
+    "url": "/static/js/main.12722720.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -24,12 +24,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/background-cayenne-chili-1091778.14a903e0.jpg"
   },
   {
+    "revision": "2567bc4dfe7da444927bd790c9c95e23",
+    "url": "/static/media/blur-pepper.2567bc4d.jpg"
+  },
+  {
     "revision": "10f1d129d8445c792ad513da7f7dfcc6",
     "url": "/static/media/dry-flavors-herbs.10f1d129.jpg"
   },
   {
     "revision": "7db1a8a23284e60bcc4211fcad122fab",
     "url": "/static/media/gray_pepper.7db1a8a2.jpg"
+  },
+  {
+    "revision": "755456928a60e16be2bfd52075cbec30",
+    "url": "/static/media/hot-peppers.75545692.jpg"
   },
   {
     "revision": "45563178871717cde27fc63806c9a149",

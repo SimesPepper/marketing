@@ -7,7 +7,7 @@ import App from './App';
 const root = document.querySelector('#root')
 render(
     <Router>
-        <Route path="/" render={props => <App {...props} />} />
+        <Route  path="/" render={props => <App {...props} />} />
     </Router>,
      root
 );

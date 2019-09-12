@@ -49,10 +49,12 @@ function rand() {
   }));
 
 
-export default ({  products, history }) => {
+export default (props) => {
     const mobile = 700;
     const desktop = 701;
 
+
+    console.log(props)
     const classes = useStyles();
   // getModalStyle is not a pure function, we roll the style only on the first render
   const [modalStyle] = useState(getModalStyle);
@@ -61,10 +63,11 @@ export default ({  products, history }) => {
   const [displayState, setDisplayState] = useState({})
   const [borderColorState, setBorderColorState] = useState('white')
   const [total, setTotal] = useState(0)
+
   const handleOpen = chosenPepper => {
     setOpen(true);
     setPepperState({...chosenPepper})
-    history.push('/item')
+    props.history.push('/item')
     setTotal(chosenPepper.price + chosenPepper.shipping)
 
   };
@@ -84,7 +87,7 @@ export default ({  products, history }) => {
   const handleClose = () => {
     setOpen(false);
     setPepperState()
-    history.push('/')
+    props.history.push('/')
     setTotal(0)
 
 
@@ -95,9 +98,14 @@ export default ({  products, history }) => {
     <div className="picture_window component_container">
 
         <MediaQuery maxWidth={mobile} >
-        <div className="overlay"></div>
+
+            <div className="overlay"></div>
+            
             <div className="container">
-                <h1><span className="three">3</span> WAYS TO CHALLENGE YOURSELF</h1>
+                <h1>
+                    <span className="three">3</span> WAYS TO CHALLENGE YOURSELF
+                </h1>
+                
                     <div className="image_div">
                         <img src={require('../img/simes_bottle_burned.png')} alt=""/>
                         <p 
@@ -117,7 +125,7 @@ export default ({  products, history }) => {
                             className="medium"
                             onClick={e => handleOpen({
                                 name: "Si'me's medium chilli sauce",
-                                price: 799,
+                                price: 7.99,
                                 shipping: 5.00,
                                 flavor: "MEDIUM",
                                 color: "yellow",
@@ -151,6 +159,8 @@ export default ({  products, history }) => {
                     <div style={modalStyle} className={classes.paper}>
                     <NewModal 
                         pepperState={ pepperState } 
+                        setCart={ props.setCart }
+                        cart={ props.cart }
                         // handlePurchase={ handlePurchase }
                     />
 
@@ -264,7 +274,9 @@ export default ({  products, history }) => {
                     <div style={modalStyle} className={classes.paper}>
                     <NewModal 
                         pepperState={ pepperState } 
+                        setCart={ props.setCart }
                         total={ total }
+                        cart={ props.cart } 
                     />
 
                     </div>

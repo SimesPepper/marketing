@@ -6,7 +6,7 @@
     top: 0;
     padding: .5%;
     background: black;
-    opacity: .7;
+    opacity: .9;
     
     
 
@@ -32,10 +32,39 @@
             }
         }
 
+        
+
         i {
             color: green;
+            position: relative;
+            // border: 2px solid red;
+
+
+        
             &:hover {
                 color: white;
+                transition: all 0.3s ease-in-out;
+
+                .cart_count{
+                    color: white;
+                    background: green;
+                    transition: all 0.3s ease-in-out;
+                }
+            }
+
+            .cart_count{
+                display: flex;
+                justify-content: center;
+                color: green;
+                background: white;
+                position: absolute;
+                top: 30%;
+                left: 20%;
+                font-size: 1.5rem;
+                border: 1px solid white;
+                border-radius: 50px;
+                width: 55%;
+                
             }
         }
     }

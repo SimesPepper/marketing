@@ -32,6 +32,9 @@ const App = (props) => {
 
   const [stripe, setStripe] = useState(null)
 
+  const [cart, setCart] = useState([]);
+  // const cart = []
+
   useEffect(() => {
     if (window.Stripe) {
       setStripe(window.Stripe('pk_test_6olVHcdmYI1PU8613u9RYIlS00iTxjp7ip'));
@@ -42,6 +45,8 @@ const App = (props) => {
       });
     }
   }, [])
+
+
 
   // const handlePurchase = async (token, addresses) => {
   //   console.log(token, addresses)
@@ -61,12 +66,18 @@ const App = (props) => {
       <div className="app">
           {/* <Header /> */}
         <MediaQuery maxWidth={mobile}>
-            <Header />
+            <Header 
+              cart={ cart } 
+              history={props.history}
+              setCart={ setCart }
+            />
             <IntroCard />
             <MiddleCard />
             <PictureWindow 
               product={ products }
-              // handlePurchase={ handlePurchase }
+              history={props.history}
+              setCart={ setCart }
+              cart={ cart }
             />
             <Contact />
             <ReviewsComponent />
@@ -85,7 +96,13 @@ const App = (props) => {
             <Timeline
               wrapper={<div id="pinContainer" />}
             >
-              <section className="panel blue"><IntroCard /></section>
+              <section className="panel blue">
+                <IntroCard
+                setCart={ setCart }
+                  cart={ cart } 
+                  history={props.history}
+                />
+              </section>
               <Tween
                 from={{ x: '-100%' }}
                 to={{ x: '0%' }}
@@ -104,7 +121,8 @@ const App = (props) => {
                     <PictureWindow 
                       products={ products }
                       history={props.history}
-                      // handlePurchase={ handlePurchase }
+                      setCart={ setCart }
+                      cart={cart}
                     /> 
                     
                   </section>
