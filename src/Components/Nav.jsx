@@ -21,6 +21,7 @@ const useStyles = makeStyles(theme => ({
       position: 'absolute',
       width: "35%",
       right: 10,
+      padding: "2%"
       
     },
     fake: {
@@ -37,7 +38,6 @@ const useStyles = makeStyles(theme => ({
 export default (props) => {
 
     const [ open, setOpen] = useState(false)
-    const [currentCart, setCurrentCart] = useState()
     const [total, setTotal] = useState(0);
     const [isShipping, setIsShipping] = useState(true)
 

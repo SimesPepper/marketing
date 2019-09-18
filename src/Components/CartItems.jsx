@@ -1,10 +1,10 @@
 import React from 'react';
-import '../Styles/cart_item.scss';
 
 import Item from './Item';
+import '../Styles/cart_item.scss';
 
 export default props => {
-    console.log(props)
+    // console.log(uuid())
     
     if(props.cart.length < 1){
         return(
@@ -16,7 +16,7 @@ export default props => {
         return(
             <div className="cart_item_container">
                     
-                { props.cart.map(item => <Item setCart={ props.setCart } cart={props.cart} name={item.name} key={Date.now()} />) }
+                { props.cart.map(item => <Item setCart={ props.setCart } cart={props.cart} name={item.name} key={item.id} id={item.id} />) }
                 
             </div>
 

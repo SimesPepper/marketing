@@ -116,7 +116,7 @@ export default (props) => {
                                 shipping: 5.00,
                                 flavor: "HOT",
                                 color: "red",
-                                description: "Si'me's hot chilli sauce,sauce. Are you ready for the heat?"
+                                description: "Si'me's hot chilli sauce. Are you ready for the heat?"
                             })}
                         >
                             HOT

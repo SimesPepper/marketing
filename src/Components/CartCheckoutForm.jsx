@@ -7,6 +7,7 @@ import '../Styles/checkout_form.scss';
 const Form = props => {
 
     const [name, setName] = useState('');
+    const [email, setEmail] = useState('')
     const [address, setAddress] = useState({
         line1: '',
         line2: '',
@@ -20,6 +21,7 @@ const Form = props => {
         setAddress({
             [e.target.name]: e.target.value
         })
+        setEmail(e.target.value);
     }
 
     const handleSubmit = async e => {
@@ -29,9 +31,9 @@ const Form = props => {
         try{
             
             let token = await props.stripe.createToken({
-                name: name
+                name
             })
-            const res = await Axios.post('http://localhost:3003/checkout', {token, name, total})
+            const res = await Axios.post('http://localhost:3003/checkout', {token, name, total, address, email})
             setName('')
             console.log(res)
            
@@ -55,6 +57,8 @@ const Form = props => {
                 onChange={e => handleChange(e)}
             />
 
+            <input type="email" name="email" value={email} onChange={e => handleChange(e)}/>
+
             <input type="text" name='line1' value={address.line1} placeholder="Address line 1" required/>
             <input type="text" name='line2' value={address.line2} placeholder="Address line 2"/>
             <div className="city_state">
@@ -63,16 +67,16 @@ const Form = props => {
             </div>
 
             <CardElement />
-            
-    <button disabled={!buttonActive}>{
-        !buttonActive? <CircularProgress /> : 
-        `Pay: $${
-            props.cart.length < 1? 0: 
-            props.cart.length > 1 && props.cart.length < 4? props.cart.reduce((acc, cur) => acc + cur.price, 0) + 5:
-            props.cart.reduce((acc, cur) => acc + cur.price, 0)
-        }`
-        
-    }</button>
+
+            <button disabled={!buttonActive}>{
+                !buttonActive? <CircularProgress /> : 
+                `Pay: $${
+                    props.cart.length < 1? 0: 
+                    props.cart.length > 1 && props.cart.length < 4? props.cart.reduce((acc, cur) => acc + cur.price, 0) + 5:
+                    props.cart.reduce((acc, cur) => acc + cur.price, 0)
+                }`
+                
+            }</button>
             
         </form>
     )

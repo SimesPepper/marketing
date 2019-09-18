@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import TestCheckout from './TestCheckout';
+import uuid from 'uuid/v1';
 
 import '../Styles/modalStyles.scss';
 
@@ -11,9 +12,12 @@ export default (props) => {
     
 
         const addToCart = _ => {
-            props.cart.length > 0?
-            props.setCart([...props.cart, props.pepperState]):
-            props.setCart([props.pepperState])
+            // First checks to see if cart is not empty (length > 0)
+            props.cart.length > 0? 
+            //if not empty, spread current and addd new
+            props.setCart([...props.cart, {...props.pepperState, id: uuid()}]): 
+            //else add new
+            props.setCart([props.pepperState]) 
             
         }
 

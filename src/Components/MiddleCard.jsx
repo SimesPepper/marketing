@@ -18,7 +18,7 @@ export default _ => {
                         Cameroon. She utilized her business savvy and cookery skills to launch 
                         businesses that would provide for her growing family all with only an 
                         elementary level schooling. This woman was my grandmother and her story resides
-                        and Persists with influencing her grandkids to be better. <span class="simes_span" >S<span class="i">i</span>'Me's Pepper</span> comes 
+                        and persists with influencing her grandkids to be better. <span class="simes_span" >S<span class="i">i</span>'Me's Pepper</span> comes 
                         from that dream as it’s named and influenced after her and her many recipes.
                         Come join in the movement of fostering the footsteps of our ancestors and 
                         remember where we came from.
