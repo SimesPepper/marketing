@@ -8,6 +8,8 @@
         margin: 2% auto;
         display: flex;
         justify-content: space-between;
+
+        
     }
 
     .item_container {
@@ -18,7 +20,8 @@
             color: red;
             font-size: 1rem;
             padding: 1%;
-
+            cursor: pointer;
+            
             &:hover {
                 background: red;
                 color: white;

@@ -21,8 +21,13 @@ const useStyles = makeStyles(theme => ({
       position: 'absolute',
       width: "35%",
       right: 10,
-      padding: "2%"
+      padding: "2%",
+
       
+      
+    },
+    checkout_btn: {
+        color: "red"
     },
     fake: {
       backgroundColor: grey[200],
@@ -70,8 +75,13 @@ export default (props) => {
                     <div className={classes.root}>
                     <ClickAwayListener onClickAway={handleClickAway}>
                         <div>
-                        <i className="fa fa-shopping-basket fa-4x" onClick={ handleClick }>
-                            <p className="cart_count" style={{visibility: props.cart == undefined || props.cart.length == 0 ? 'hidden': "visible" }}>{props.cart == undefined || props.cart.length == 0 ? 0 : props.cart.length }</p>
+                        <i className="fa fa-shopping-basket fa-4x" style={{cursor: 'pointer'}} onClick={ handleClick }>
+                            <p 
+                                className="cart_count" 
+                                style={{visibility: props.cart == undefined || props.cart.length == 0 ? 'hidden': "visible", cursor: 'pointer' }}
+                            >
+                                {props.cart == undefined || props.cart.length == 0 ? 0 : props.cart.length }
+                            </p>
                         </i>
                         {open ? (
                             
@@ -87,7 +97,25 @@ export default (props) => {
                                     }
                                 </p>
 
-                                <p style={{cursor: "pointer", borderRadius: "15px", margin: "2% auto", width: "95%", textAlign: "center", fontSize: '2rem', border: "1px solid green", color: "green"}} className="checkout" onClick={e => setCheckout(true)}>Checkout</p>
+                                <p 
+                                    className="checkout_btn" 
+                                    style={{
+                                        cursor: "pointer", 
+                                        borderRadius: "15px", 
+                                        margin: "2% auto", 
+                                        width: "95%", 
+                                        textAlign: "center", 
+                                        fontSize: '2rem', 
+                                        border: "1px solid green", 
+                                        color: "green",
+
+                                        
+                                    }}
+                                    className="checkout" 
+                                    onClick={e => setCheckout(true)}>
+                                        
+                                    Checkout
+                                </p>
                                     
                                 {/* <Route path="cart-checkout" component={CartCheckout}/> */}
                             </Paper>
