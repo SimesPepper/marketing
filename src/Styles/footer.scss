@@ -43,11 +43,8 @@
     }
 
     @media (max-width: 700px) {
-        nav {
-            margin: 2%;
-            width: 50%;
-            justify-content: space-between;
-
+        .footer_copy{
+            margin: 0 auto;
         }
     }
 }

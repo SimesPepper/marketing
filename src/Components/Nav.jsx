@@ -22,12 +22,7 @@ const useStyles = makeStyles(theme => ({
       width: "35%",
       right: 10,
       padding: "2%",
-
       
-      
-    },
-    checkout_btn: {
-        color: "red"
     },
     fake: {
       backgroundColor: grey[200],
@@ -86,7 +81,7 @@ export default (props) => {
                         {open ? (
                             
                             <div>
-                            <Paper className={classes.paper}>
+                            <Paper className={`cart ${classes.paper}`}>
                                 <CartItems cart={ props.cart } setCart={ props.setCart }/>
                                 
                                 <p style={{marginTop: "15%", fontSize: "1.5rem", textAlign: "center"}}>
@@ -145,7 +140,7 @@ export default (props) => {
                                 
                                 <div>
                                     
-                                <Paper className={classes.paper}>
+                                <Paper className={`cart ${classes.paper}`}>
                                     <CartCheckout cart={ props.cart }/>
                                 </Paper>
                                 </div>

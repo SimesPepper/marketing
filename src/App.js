@@ -81,7 +81,7 @@ const App = (props) => {
             />
             <Contact />
             <ReviewsComponent />
-            {/* <Footer /> */}
+            <Footer />
         </MediaQuery>
 
         <MediaQuery minWidth={desktop}>

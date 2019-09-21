@@ -12,48 +12,6 @@
     overflow: hidden;
     
 
-    // .cta {
-    //     width: 31%;
-    //     color: white;
-    //     position: absolute;
-    //     top: 80%;
-    //     right: 5%;
-    //     background: black;
-    //     opacity: .5;
-    //     padding: 1%;
-    //     font-size: 3rem;
-    //     border: 3px solid white;
-    //     border-radius: 50px;
-    //     font-family: 'Oregano', cursive;
-    //     cursor: pointer;
-    //     word-spacing: 10px;
-    //     transition: all .4s ease-in-out;
-    //     box-shadow: 1px 1px 50px 15px black;
-    //     text-shadow: 5px 5px 20px black;
-    //     animation: bounce 2s linear 2s infinite alternate;
-
-        
-
-        
-
-    //     &:hover {
-            
-    //         transition: all .4s  ease-in-out 0s;
-    //         opacity: 1;
-    //         animation: none;
-    //         color: green;
-    //         border-color: red;
-            
-            
-    //         .i {
-    //             color: red;
-    //             transition: all 0.4s ease 0s ;
-    //         }
-            
-    //     }
-    // }
-
-    // 
 
     .bottle_logo {
         width: 25%;
@@ -81,16 +39,10 @@
     @media (max-width: 700px){
         position: relative;
         height: 27vh;
-        // background-attachment: scroll;
-
-        // .cta {
-        //     position: relative;
-        //     width: 50%;
-        //     font-size: 1rem;
-        //     top: 25%;
-        //     left: 24%;
-        //     animation: none;
-        // }
+       
+        .bottle_logo {
+            top: 5%;
+        }
     }
 
 }

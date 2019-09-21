@@ -151,21 +151,23 @@ export default (props) => {
                        
                     </div>
                     <Modal
-                    aria-labelledby="simple-modal-title"
-                    aria-describedby="simple-modal-description"
-                    open={open}
-                    onClose={handleClose}
-                >
-                    <div style={modalStyle} className={classes.paper}>
+                        className='item_modal'
+                        aria-labelledby="simple-modal-title"
+                        aria-describedby="simple-modal-description"
+                        open={open}
+                        onClose={handleClose}
+                    >
+                    <div style={modalStyle} className={`item_modal ${classes.paper}`}>
                     <NewModal 
+                        className='item_modal'
                         pepperState={ pepperState } 
                         setCart={ props.setCart }
                         cart={ props.cart }
-                        // handlePurchase={ handlePurchase }
+                        close={handleClose}
                     />
 
                     </div>
-                </Modal>
+                    </Modal>
                 <h1>CHOOSE YOUR OWN ADVENTURE<span className="exclaim">!</span></h1>
             </div>
         </MediaQuery>

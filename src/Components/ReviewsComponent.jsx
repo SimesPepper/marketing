@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-
+import MediaQuery from 'react-responsive'
 import Reviews from './Reviews';
 import Footer from './Footer';
 import '../Styles/reviewComponent.scss';
 export default _ => {
+    const mobile = 700;
+    const desktop = 701;
 
     const [comment, setComment] = useState('');
     const [ reviewState, setReviewState ] = useState([
@@ -74,33 +76,65 @@ export default _ => {
 
     return(
         <>
+            <MediaQuery maxWidth={mobile}>
             <div className="review_main_div">
-                <h1>LEAVE US YOUR THOUGHTS </h1>
-                <div className="review">
-                    <div className="review_display">
+                    <h1>LEAVE US YOUR THOUGHTS</h1>
+                    <div className="review">
+                        <div className="review_display">
 
-                        {reviewState.map(review => (
-                            <Reviews 
-                                pictureName={review.pictureName}
-                                name={review.name}
-                                comment={review.comment}
+                            {reviewState.map(review => (
+                                <Reviews 
+                                    pictureName={review.pictureName}
+                                    name={review.name}
+                                    comment={review.comment}
+                                />
+                            ))}
+                        </div>
+                        <form>
+                            <textarea 
+                                onChange={e => handleOnChange(e)}
+                                className="input-box"
+                                placeholder="Leave us your thoughts" 
+                                type="text" 
+                                value={comment}
                             />
-                        ))}
-                    </div>
-                    <form>
-                        <textarea 
-                            onChange={e => handleOnChange(e)}
-                            className="input-box"
-                            placeholder="Leave us your thoughts" 
-                            type="text" 
-                            value={comment}
-                        />
-                        <i class="fas fa-paper-plane fa-5x" onClick={e => handleSubmit(e)}></i>
+                            <i class="fas fa-paper-plane fa-5x" onClick={e => handleSubmit(e)}></i>
 
-                    </form>
+                        </form>
+                    </div>
                 </div>
-            <Footer />
-            </div>
+            </MediaQuery>
+
+            <MediaQuery minWidth={desktop}>
+
+                <div className="review_main_div">
+                    <h1>LEAVE US YOUR THOUGHTS </h1>
+                    <div className="review">
+                        <div className="review_display">
+
+                            {reviewState.map(review => (
+                                <Reviews 
+                                    pictureName={review.pictureName}
+                                    name={review.name}
+                                    comment={review.comment}
+                                />
+                            ))}
+                        </div>
+                        <form>
+                            <textarea 
+                                onChange={e => handleOnChange(e)}
+                                className="input-box"
+                                placeholder="Leave us your thoughts" 
+                                type="text" 
+                                value={comment}
+                            />
+                            <i class="fas fa-paper-plane fa-5x" onClick={e => handleSubmit(e)}></i>
+
+                        </form>
+                    </div>
+                <Footer />
+                </div>
+            </MediaQuery>
         </>
         
     )
