@@ -87,7 +87,7 @@ export default (props) => {
                                 <p style={{marginTop: "15%", fontSize: "1.5rem", textAlign: "center"}}>
                                     <span style={{fontWeight: "bold"}}>Total:</span> ${ 
                                         props.cart.length < 1? 0: 
-                                        props.cart.length > 1 && props.cart.length < 4? props.cart.reduce((acc, cur) => acc + cur.price, 0) + 5:
+                                        props.cart.length > 0 && props.cart.length < 4? props.cart.reduce((acc, cur) => acc + cur.price, 0) + 5:
                                         props.cart.reduce((acc, cur) => acc + cur.price, 0)
                                     }
                                 </p>

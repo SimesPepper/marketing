@@ -72,7 +72,7 @@ const Form = props => {
                 !buttonActive? <CircularProgress /> : 
                 `Pay: $${
                     props.cart.length < 1? 0: 
-                    props.cart.length > 1 && props.cart.length < 4? props.cart.reduce((acc, cur) => acc + cur.price, 0) + 5:
+                    props.cart.length > 0 && props.cart.length < 4? props.cart.reduce((acc, cur) => acc + cur.price, 0) + 5:
                     props.cart.reduce((acc, cur) => acc + cur.price, 0)
                 }`
                 
