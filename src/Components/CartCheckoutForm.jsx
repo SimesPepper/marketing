@@ -33,7 +33,7 @@ const Form = props => {
             let token = await props.stripe.createToken({
                 name
             })
-            const res = await Axios.post('http://localhost:3003/checkout', {token, name, total, address, email})
+            const res = await Axios.post('https://simes-pepper.herokuapp.com/checkout', {token, name, total, address, email})
             setName('')
             console.log(res)
            

@@ -45,7 +45,7 @@ console.log(props)
                 name: name
             })
             console.log(token)
-            const res = await Axios.post('http://localhost:3003/checkout', {token, name, amount, address, email})
+            const res = await Axios.post('https://simes-pepper.herokuapp.com/checkout', {token, name, amount, address, email})
             setName('')
             props.pepperState.history.push('/checkout-complete')
             //needs to redirect back to homepage
