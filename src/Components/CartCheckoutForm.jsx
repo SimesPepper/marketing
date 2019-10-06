@@ -16,12 +16,19 @@ const Form = props => {
     })
     const [buttonActive, setButtonActive] = useState(true)
 
-    const handleChange = e => {
+    const handleAddressChange = e => {
+        
+        setAddress({...address, [e.target.name]: e.target.value })
+    }
+
+    const handleNameChange = e => {
+
         setName(e.target.value);
-        setAddress({
-            [e.target.name]: e.target.value
-        })
-        setEmail(e.target.value);
+    }
+
+    const handleEmailChange = e => {
+
+        setEmail(e.target.value)
     }
 
     const handleSubmit = async e => {
@@ -45,29 +52,65 @@ const Form = props => {
         // props.pepperState.history.push('/checkout-complete')
 
     }
-
     return(
         <form onSubmit={e => handleSubmit(e)}>
             <input 
-                type="text"
                 name="name"
-                placeholder="Name" 
-                id=""
+                type="text"
                 value={name}
-                onChange={e => handleChange(e)}
+                placeholder="Name" 
+                onChange={e => handleNameChange(e)}
+                />
+
+            <input 
+                type="email" 
+                name="email" 
+                value={email} 
+                placeholder="Email" 
+                onChange={e => handleEmailChange(e)}
             />
 
-            <input type="email" name="email" value={email} onChange={e => handleChange(e)}/>
+            <input 
+                required
+                type="text" 
+                name='line1' 
+                value={address.line1} 
+                placeholder="Address line 1" 
+                onChange={e => handleAddressChange(e)}
+            />
 
-            <input type="text" name='line1' value={address.line1} placeholder="Address line 1" required/>
-            <input type="text" name='line2' value={address.line2} placeholder="Address line 2"/>
+            <input 
+                type="text" 
+                name='line2' 
+                value={address.line2} 
+                placeholder="Address line 2"
+                onChange={e => handleAddressChange(e)}
+
+            />
+            
             <div className="city_state">
-                <input type="text" name='city' value={address.city} placeholder="City" required/>
-                <input type="text" name='state' value={address.state} placeholder="State" required/>
+                <input 
+                    required
+                    type="text" 
+                    name='city' 
+                    placeholder="City" 
+                    value={address.city}
+                    onChange={e => handleAddressChange(e)}
+
+                />
+
+                <input 
+                    required
+                    type="text" 
+                    name='state' 
+                    placeholder="State" 
+                    value={address.state} 
+                    onChange={e => handleAddressChange(e)}
+                    
+                />
             </div>
 
             <CardElement />
-
             <button disabled={!buttonActive}>{
                 !buttonActive? <CircularProgress /> : 
                 `Pay: $${
@@ -80,6 +123,8 @@ const Form = props => {
             
         </form>
     )
+
+
 }
 
 export default injectStripe(Form)
