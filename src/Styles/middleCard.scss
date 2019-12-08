@@ -82,20 +82,48 @@
             
         }
 
-        .statement {
-            width: 100%;
-            padding-bottom: 5%;
+       .sections{
+           display: flex;
+        //    border: 1px solid red;
+           align-items: center;
+           padding: 2%;
+           p {
+               font-size: 1.3rem;
+               border: 1px solid black;
+               width: 70%;
+           }
+       }
 
-            .middle_logo {
-                margin: 2% auto;
-                width: 35%;;
+       .deliver {
+           i {
+               color: blue;
+           }
+       }
 
-            }
-            
-            h3 {
-                font-size: 1.5rem;
-            }
+       .free {
+
+            flex-direction: row-reverse;
+           i {
+               color: green;
+           }
+       }
+
+       .natural {
+           i {
+               color: lightgreen;
+           }
+       }
+
+        .middle_logo {
+            margin: 2% auto;
+            width: 45%;
+
         }
+        
+        h3 {
+            font-size: 1.5rem;
+        }
+        
     }
 }
 

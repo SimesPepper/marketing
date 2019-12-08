@@ -1,9 +1,9 @@
 .review_div {
     background: lightgray;
-    border-radius: 15px;
+    // border-radius: 15px;
     // border-top: 5px solid green;
     // border-bottom: 5px solid green;
-    border-left: 5px solid green;
+    // border-left: 5px solid green;
     // border-right: 1px solid green;
     // box-shadow: 3px 5px 1px green;
     display: flex;
@@ -39,8 +39,8 @@
 
     &:nth-child(odd) {
         flex-direction: row-reverse;
-        border-right: 5px solid green;
-        border-left: 0px solid green;
+        // border-right: 5px solid green;
+        // border-left: 0px solid green;
 
         // box-shadow: -3px 2px 1px green;
         

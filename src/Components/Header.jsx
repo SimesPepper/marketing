@@ -4,19 +4,15 @@ import Logo from './Logo';
 import Nav from './Nav';
 import '../Styles/headerStyles.scss';
 
-export default props => {
-console.log(props)
+export default withRouter ( props => {
     return(
         <div className="header">
             <Logo />
    
 
-            <Nav 
-                cart={ props.cart } 
-                setCart={ props.setCart }
-            />
+            <Nav {...props}/>
            
 
         </div>
     )
-}
+})

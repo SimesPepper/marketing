@@ -47,16 +47,6 @@ const App = (props) => {
   }, [])
 
 
-
-  // const handlePurchase = async (token, addresses) => {
-  //   console.log(token, addresses)
-  //   // const res = await Axios.post('localhost:3003/checkout', { token, products })
-  //   // const { status } = res.data;
-
-  //   // if(status === 'success') toast('Success! Check email for details')
-  //   // toast('Something went wrong', { type: "error"})
-  // }
-
   return (
     <StripeProvider
       stripe={stripe}
@@ -72,13 +62,13 @@ const App = (props) => {
               setCart={ setCart }
             />
             <IntroCard />
-            <MiddleCard />
             <PictureWindow 
               product={ products }
               history={props.history}
               setCart={ setCart }
               cart={ cart }
             />
+            <MiddleCard />
             <Contact />
             <ReviewsComponent />
             <Footer />
@@ -143,7 +133,6 @@ const App = (props) => {
             </Scene>
           </Controller>
         </SectionWipes2Styled>
-        {/* <Footer /> */}
       </MediaQuery>
       </div>
     </StripeProvider>

@@ -25,19 +25,6 @@ export default props => {
                     history={ props.history }
                 />
                 <div className="bottle_logo" /> 
-                {/* <div className="cta">
-                    <span className="simes_span">
-                        SP
-                        <span className="i">
-                            I
-                        </span>
-                        CE
-                    </span> 
-                        UP YOUR L
-                    <span className="i">
-                        I
-                    </span>FE!
-                </div> */}
             </MediaQuery>
         </div>
 

@@ -4,7 +4,6 @@ import Item from './Item';
 import '../Styles/cart_item.scss';
 
 export default props => {
-    // console.log(uuid())
     
     if(props.cart.length < 1){
         return(

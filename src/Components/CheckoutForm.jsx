@@ -5,7 +5,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 
 import '../Styles/checkout_form.scss';
 const Form = props => {
-console.log(props)
+    console.log(props)
     const [name, setName] = useState('');
     const [email, setEmail] = useState('')
     const [address, setAddress] = useState({
@@ -33,21 +33,22 @@ console.log(props)
 
     const handleSubmit = async e => {
         e.preventDefault();
-        const amount = props.pepperState.pepperState.price;
-        
+        const amount = props.pepperState.price
+        console.log(amount)
 
         setButtonActive(false)
 
-        console.log(props)
         try{
             
             let token = await props.stripe.createToken({
                 name: name
             })
-            console.log(token)
             const res = await Axios.post('https://simes-pepper.herokuapp.com/checkout', {token, name, amount, address, email})
+            // const res = await Axios.post('http://localhost:3003/checkout', {token, name, amount, address, email})
             setName('')
-            props.pepperState.history.push('/checkout-complete')
+            console.log(res)
+            props.pepperState.setOpen(res)
+            props.pepperState.history.push({pathname:'/checkout-complete', state:{receipt: res.data.receipt}})
             //needs to redirect back to homepage
         }catch(error){
             console.log(error)
@@ -57,6 +58,8 @@ console.log(props)
 
 
     }
+
+   
 
     return(
         <form onSubmit={e => handleSubmit(e)}>
@@ -117,9 +120,23 @@ console.log(props)
             </div>
 
             <CardElement />
-    <button disabled={!buttonActive}>{!buttonActive? <CircularProgress /> : `Pay: $${props.pepperState.pepperState.price + 5 }`}</button>
+        {/* <button 
+            disabled={!buttonActive}>{!buttonActive? <CircularProgress /> : `Pay: $${props.pepperState.pepperState.price + 5 }`}</button>*/}
+
             
-        </form>
+            <button disabled={!buttonActive}>
+                {
+                    !buttonActive? <CircularProgress /> : 
+                    `Pay: $
+                        ${
+                            props.pepperState.cart.length < 1? props.pepperState.pepperState.price + 5 || 0: 
+                            props.pepperState.cart.length > 0 && props.pepperState.cart.length < 4? props.pepperState.cart.reduce((acc, cur) => acc + cur.price, 0) + 5:
+                            props.pepperState.cart.reduce((acc, cur) => acc + cur.price, 0)
+                        }
+                    `
+                }
+            </button>
+        </form> 
     )
 }
 

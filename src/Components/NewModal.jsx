@@ -9,13 +9,12 @@ import PaymentOutcome from './PaymentOutcome';
 export default ({ pepperState, cart, setCart, close }) => {
     
 
-  console.log(cart)
     return (
       
         <div className="modal_container">
             <p className="close_btn" onClick={close}>X</p>
             <Route path='/item' render={props => <TestIte {...props} pepperState={pepperState} cart={ cart } setCart={ setCart } />} />
-            <Route path="/checkout" render={props => <TestCheckout {...props} pepperState={ pepperState } />}/>
+            <Route path="/checkout" render={props => <TestCheckout {...props} pepperState={ pepperState } cart={cart}/>}/>
             <Route path="/checkout-complete" component={ PaymentOutcome}/>
         </div>
     )

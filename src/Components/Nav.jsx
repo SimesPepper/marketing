@@ -11,6 +11,7 @@ import { Route, Link } from 'react-router-dom';
 
 import CartItems from './CartItems';
 import CartCheckout from './CartCheckout';
+import PaymentOutcome from './PaymentOutcome';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -38,16 +39,24 @@ const useStyles = makeStyles(theme => ({
 export default (props) => {
 
     const [ open, setOpen] = useState(false)
-    const [total, setTotal] = useState(0);
-    const [isShipping, setIsShipping] = useState(true)
-
+    const [receipt, setReceipt] = useState(0);
+    const [completePurchase, setCompletePurchase] = useState(false)
     
+    console.log(` purchased is ${completePurchase}`)
+    console.log(`open is ${open}`)
 
     const classes = useStyles();
 
     const [checkout, setCheckout] = useState(false)
 
-    console.log(props)
+    const checkoutComplete = receipt => {
+        console.log(receipt.data)
+        setCompletePurchase(true)
+        setReceipt(receipt.data.receipt)
+        props.setCart([])
+        
+    }
+
 
     const handleClick = () => {
         setOpen(prev => !prev);
@@ -57,13 +66,17 @@ export default (props) => {
       const handleClickAway = () => {
         setOpen(false);
         setCheckout(false)
+        setCompletePurchase(false)
       };
 
       const fake = <div className={classes.fake} />;
     if(!checkout) {
+        console.log('normal return')
 
         return(
+            
             <nav>
+                
                 <a className="nav_links" href="#">Login</a>
                 <a className="nav_links" href="#">Register</a>
     
@@ -122,14 +135,14 @@ export default (props) => {
             </nav> 
         )
     }else {
-        return(
+        console.log('checkout return')
+        if(!completePurchase){
+            return(
             <nav>
                 <a className="nav_links" href="#">Login</a>
                 <a className="nav_links" href="#">Register</a>
     
-                {/* <i className="fa fa-shopping-basket fa-4x" onClick={ handleClick }>
-                    <p className="cart_count" style={{visibility: props.cart == undefined || props.cart.length == 0 ? 'hidden': "visible" }}>{props.cart == undefined || props.cart.length == 0 ? 0 : props.cart.length }</p>
-                </i> */}
+            
                     <div className={classes.root}>
                     <ClickAwayListener onClickAway={handleClickAway}>
                         <div>
@@ -141,7 +154,7 @@ export default (props) => {
                                 <div>
                                     
                                 <Paper className={`cart ${classes.paper}`}>
-                                    <CartCheckout cart={ props.cart }/>
+                                    <CartCheckout cart={ props.cart } setOpen={checkoutComplete} open={open}/>
                                 </Paper>
                                 </div>
                             ) : null}
@@ -149,6 +162,33 @@ export default (props) => {
                     </ClickAwayListener>
                     </div>
             </nav> 
-        )
+        )}else{
+            return(
+                <nav>
+                <a className="nav_links" href="#">Login</a>
+                <a className="nav_links" href="#">Register</a>
+    
+            
+                    <div className={classes.root}>
+                    <ClickAwayListener onClickAway={handleClickAway}>
+                        <div>
+                            <i className="fa fa-shopping-basket fa-4x" onClick={ handleClick }>
+                                <p className="cart_count" style={{visibility: props.cart == undefined || props.cart.length == 0 ? 'hidden': "visible" }}>{props.cart == undefined || props.cart.length == 0 ? 0 : props.cart.length }</p>
+                            </i>
+                            {open ? (
+                                
+                                <div>
+                                    
+                                <Paper className={`cart ${classes.paper}`}>
+                                    <p style={{fontSize: '2rem'}}>Thank you for your purchase. To print your receipt, click <a target="_blank" href={receipt}>here</a></p>
+                                </Paper>
+                                </div>
+                            ) : null}
+                        </div>
+                    </ClickAwayListener>
+                    </div>
+            </nav> 
+            )
+        }
     }
 }

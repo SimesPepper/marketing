@@ -7,7 +7,6 @@ import '../Styles/modalStyles.scss';
 
 
 export default (props) => {
-    console.log(props)
     
     
 
@@ -31,7 +30,7 @@ export default (props) => {
             <h2>Shipping: ${ props.pepperState.shipping }</h2>
             <h2 className="total">Total: ${ props.pepperState.price + props.pepperState.shipping }</h2>
             <p className="add_to_cart" onClick={addToCart}>Add To Cart</p>
-            <Link to='/checkout' component={TestCheckout} ><p className="checkout">Checkout</p></Link>
+            <Link to={{pathname:'/checkout', state:{cart: props.cart}}} component={TestCheckout} ><p className="checkout">Checkout</p></Link>
         </>
     )
 }

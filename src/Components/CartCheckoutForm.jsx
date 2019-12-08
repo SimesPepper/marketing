@@ -5,7 +5,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 
 import '../Styles/checkout_form.scss';
 const Form = props => {
-
+    console.log(props)
     const [name, setName] = useState('');
     const [email, setEmail] = useState('')
     const [address, setAddress] = useState({
@@ -40,16 +40,15 @@ const Form = props => {
             let token = await props.stripe.createToken({
                 name
             })
-            const res = await Axios.post('https://simes-pepper.herokuapp.com/checkout', {token, name, total, address, email})
+            const res = await Axios.post('http://localhost:3003/checkout', {token, name, total, address, email})
+            // const res = await Axios.post('https://simes-pepper.herokuapp.com/checkout', {token, name, total, address, email})
             setName('')
             console.log(res)
-           
-            //needs to redirect back to homepage
+            props.pepperState.history.push({pathname:'/checkout-complete', state:{receipt: res.data.receipt}})
+            
         }catch(error){
             console.log(error)
         }
-
-        // props.pepperState.history.push('/checkout-complete')
 
     }
     return(

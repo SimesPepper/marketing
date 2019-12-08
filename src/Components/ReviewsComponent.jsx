@@ -9,34 +9,17 @@ export default _ => {
 
     const [comment, setComment] = useState('');
     const [ reviewState, setReviewState ] = useState([
-        {
-            name: 'Amy Smalls',
-            pictureName: '',
-            comment: 'This was great!! I love it. Thank you!',
-            postedDate: Date.now() //should use moment.js
-        },
-        {
-            name: 'James Bigs',
-            pictureName: '',
-            comment: 'Shit was lit',
-            postedDate: Date.now() //should use moment.js
-        },
-        {
-            name: 'Becky Medium',
-            pictureName: '',
-            comment: 'Thank you for the fast delivery',
-            postedDate: Date.now() //should use moment.js
-        },
+  
         {
             name: 'Ben Xlarge',
             pictureName: '',
-            comment: 'Party time',
+            comment: 'Woow, what a kick',
             postedDate: Date.now() //should use moment.js
         },
         {
             name: 'Kevin Huge',
             pictureName: '',
-            comment: 'Today was a good day',
+            comment: 'Best on everything',
             postedDate: Date.now() //should use moment.js
         },
         {
@@ -52,7 +35,7 @@ export default _ => {
         const newReview = {
             name: "Guest",
             comment: comment,
-            postedDate: Date.now()//should use momentjs
+            postedDate: Date.now()//should use moment.js
         }
         setReviewState([
             ...reviewState, newReview
@@ -66,7 +49,6 @@ export default _ => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log(e.target.value)
         if(comment !== ''){
 
             updateState(comment)
@@ -78,7 +60,7 @@ export default _ => {
         <>
             <MediaQuery maxWidth={mobile}>
             <div className="review_main_div">
-                    <h1>LEAVE US YOUR THOUGHTS</h1>
+                    <h1>WE'D LIKE TO HEAR FROM YOU</h1>
                     <div className="review">
                         <div className="review_display">
 
@@ -90,17 +72,6 @@ export default _ => {
                                 />
                             ))}
                         </div>
-                        <form>
-                            <textarea 
-                                onChange={e => handleOnChange(e)}
-                                className="input-box"
-                                placeholder="Leave us your thoughts" 
-                                type="text" 
-                                value={comment}
-                            />
-                            <i class="fas fa-paper-plane fa-5x" onClick={e => handleSubmit(e)}></i>
-
-                        </form>
                     </div>
                 </div>
             </MediaQuery>

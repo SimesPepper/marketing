@@ -39,7 +39,7 @@ function rand() {
 
       position: 'absolute',
       width: 400,
-      backgroundColor: theme.palette.background.paper,
+      backgroundColor: 'white',
       border: '2px solid #000',
       borderRadius: '15px',
       boxShadow: theme.shadows[5],
@@ -54,7 +54,6 @@ export default (props) => {
     const desktop = 701;
 
 
-    console.log(props)
     const classes = useStyles();
   // getModalStyle is not a pure function, we roll the style only on the first render
   const [modalStyle] = useState(getModalStyle);
@@ -102,9 +101,10 @@ export default (props) => {
             <div className="overlay"></div>
             
             <div className="container">
-                <h1>
-                    <span className="three">3</span> WAYS TO CHALLENGE YOURSELF
+                <h1 style={{color: 'green', borderTop: '2px solid black'}}>
+                  WHAT WE OFFER:
                 </h1>
+                <p style={{fontSize: '1rem'}}>"LOVE IN A JAR FOR THOSE WHO SEEK TO BE ADVENTUROUS WITH THEIR PALETTES"</p>
                 
                     <div className="image_div">
                         <img src={require('../img/simes_bottle_burned.png')} alt=""/>
@@ -168,7 +168,7 @@ export default (props) => {
 
                     </div>
                     </Modal>
-                <h1>CHOOSE YOUR OWN ADVENTURE<span className="exclaim">!</span></h1>
+                <h1 className="choose">CHOOSE YOUR OWN ADVENTURE<span className="exclaim">!</span></h1>
             </div>
         </MediaQuery>
         <MediaQuery minWidth={desktop} >
@@ -279,6 +279,7 @@ export default (props) => {
                         setCart={ props.setCart }
                         total={ total }
                         cart={ props.cart } 
+                        close={handleClose}
                     />
 
                     </div>
