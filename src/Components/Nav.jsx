@@ -50,7 +50,6 @@ export default (props) => {
     const [checkout, setCheckout] = useState(false)
 
     const checkoutComplete = receipt => {
-        console.log(receipt.data)
         setCompletePurchase(true)
         setReceipt(receipt.data.receipt)
         props.setCart([])
