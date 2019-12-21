@@ -6,7 +6,12 @@ export default ({cart, pepperState, history}) => {
     return(
       <Elements>
        <CheckoutForm 
-            pepperState={{pepperState, cart, price: pepperState.price, history}}
+           pepperState={pepperState}
+           cart={cart}
+           price={pepperState.price}
+           history={history}
+            
+
             // cart={cart}
             // price={pepperState.price}
             

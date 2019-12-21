@@ -8,10 +8,13 @@ import Paper from '@material-ui/core/Paper';
 import { grey } from '@material-ui/core/colors';
 import { makeStyles } from '@material-ui/core/styles';
 import { Route, Link } from 'react-router-dom';
+import {Elements} from 'react-stripe-elements';
+import {withRouter} from 'react-router'
 
 import CartItems from './CartItems';
 import CartCheckout from './CartCheckout';
 import PaymentOutcome from './PaymentOutcome';
+import CheckoutForm from './CheckoutForm';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -36,7 +39,7 @@ const useStyles = makeStyles(theme => ({
     },
   }));
 
-export default (props) => {
+export default withRouter( (props) => {
 
     const [ open, setOpen] = useState(false)
     const [receipt, setReceipt] = useState(0);
@@ -44,15 +47,19 @@ export default (props) => {
     
     console.log(` purchased is ${completePurchase}`)
     console.log(`open is ${open}`)
+    console.log(props)
 
     const classes = useStyles();
 
     const [checkout, setCheckout] = useState(false)
 
     const checkoutComplete = receipt => {
+        props.setCart([])
+        // setCheckout(false)
         setCompletePurchase(true)
         setReceipt(receipt.data.receipt)
-        props.setCart([])
+        props.history.replace('/')
+
         
     }
 
@@ -69,6 +76,37 @@ export default (props) => {
       };
 
       const fake = <div className={classes.fake} />;
+
+      if(completePurchase){
+        console.log('endinggg')
+        return(
+            <nav>
+            <a className="nav_links" href="#">Login</a>
+            <a className="nav_links" href="#">Register</a>
+
+        
+                <div className={classes.root}>
+                <ClickAwayListener onClickAway={handleClickAway}>
+                    <div>
+                        <i className="fa fa-shopping-basket fa-4x" onClick={ handleClick }>
+                            <p className="cart_count" style={{visibility: props.cart == undefined || props.cart.length == 0 ? 'hidden': "visible" }}>{props.cart == undefined || props.cart.length == 0 ? 0 : props.cart.length }</p>
+                        </i>
+                        {open ? (
+                            
+                            <div>
+                                
+                            <Paper className={`cart ${classes.paper}`}>
+                                <p style={{fontSize: '2rem'}}>Thank you for your purchase. To print your receipt, click <a target="_blank" href={receipt}>here</a></p>
+                            </Paper>
+                            </div>
+                        ) : null}
+                    </div>
+                </ClickAwayListener>
+                </div>
+        </nav> 
+        )
+    }
+
     if(!checkout) {
         console.log('normal return')
 
@@ -133,9 +171,11 @@ export default (props) => {
                     </div>
             </nav> 
         )
-    }else {
-        console.log('checkout return')
-        if(!completePurchase){
+    }
+    
+    if(checkout){
+            console.log('checkout return')
+
             return(
             <nav>
                 <a className="nav_links" href="#">Login</a>
@@ -153,7 +193,11 @@ export default (props) => {
                                 <div>
                                     
                                 <Paper className={`cart ${classes.paper}`}>
-                                    <CartCheckout cart={ props.cart } setOpen={checkoutComplete} open={open}/>
+                                    <Elements>
+                                       
+                                            <CheckoutForm cart={ props.cart } setOpen={checkoutComplete} open={open} history={props.history}/>
+                                      
+                                    </Elements>
                                 </Paper>
                                 </div>
                             ) : null}
@@ -161,33 +205,8 @@ export default (props) => {
                     </ClickAwayListener>
                     </div>
             </nav> 
-        )}else{
-            return(
-                <nav>
-                <a className="nav_links" href="#">Login</a>
-                <a className="nav_links" href="#">Register</a>
+    )}
     
-            
-                    <div className={classes.root}>
-                    <ClickAwayListener onClickAway={handleClickAway}>
-                        <div>
-                            <i className="fa fa-shopping-basket fa-4x" onClick={ handleClick }>
-                                <p className="cart_count" style={{visibility: props.cart == undefined || props.cart.length == 0 ? 'hidden': "visible" }}>{props.cart == undefined || props.cart.length == 0 ? 0 : props.cart.length }</p>
-                            </i>
-                            {open ? (
-                                
-                                <div>
-                                    
-                                <Paper className={`cart ${classes.paper}`}>
-                                    <p style={{fontSize: '2rem'}}>Thank you for your purchase. To print your receipt, click <a target="_blank" href={receipt}>here</a></p>
-                                </Paper>
-                                </div>
-                            ) : null}
-                        </div>
-                    </ClickAwayListener>
-                    </div>
-            </nav> 
-            )
-        }
-    }
-}
+    
+    
+})

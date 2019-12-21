@@ -37,11 +37,11 @@ const App = (props) => {
 
   useEffect(() => {
     if (window.Stripe) {
-      setStripe(window.Stripe('pk_live_adoCNhh7KNUkcjSnyRScAH1A00SPJuwx04'));
+      setStripe(window.Stripe('pk_test_6olVHcdmYI1PU8613u9RYIlS00iTxjp7ip'));
     } else {
       document.querySelector('#stripe-js').addEventListener('load', () => {
         // Create Stripe instance once Stripe.js loads
-        setStripe(window.Stripe('pk_live_adoCNhh7KNUkcjSnyRScAH1A00SPJuwx04'));
+        setStripe(window.Stripe('pk_test_6olVHcdmYI1PU8613u9RYIlS00iTxjp7ip'));
       });
     }
   }, [])
@@ -50,7 +50,7 @@ const App = (props) => {
   return (
     <StripeProvider
       stripe={stripe}
-      apiKey="pk_live_adoCNhh7KNUkcjSnyRScAH1A00SPJuwx04"
+      apiKey="pk_test_6olVHcdmYI1PU8613u9RYIlS00iTxjp7ip"
     >
 
       <div className="app">
