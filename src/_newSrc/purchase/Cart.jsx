@@ -75,12 +75,18 @@ export default ({ cart, setCart, history, location }) => {
 
  
 
-   console.log(cart)
+   console.log(history)
    console.log(cache)
     return (
 
         <div className="cart-page">
             <Header />
+
+            <div className="go-back" onClick={e => history.goBack()} >
+
+                <i class="fas fa-arrow-left fa-3x" /> 
+                <h1>Go Back</h1>
+            </div>
 
             {
                 filteredCart && filteredCart.map(item => (

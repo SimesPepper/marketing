@@ -29,7 +29,7 @@ export default _ => {
             <nav className="nav">
                 <NavLink to="/" className="nav-links" href="#"> WELCOME </NavLink>
                 <NavLink to="/about" className="nav-links" > ABOUT </NavLink>
-                <NavLink to="/fan-board" className="nav-links" > FAN BOARD </NavLink>
+                <NavLink to="/social-board" className="nav-links" > SOCIAL BOARD </NavLink>
                 <NavLink to="/contact" className="nav-links" > CONTACT </NavLink>
             </nav>
         </div>

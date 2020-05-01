@@ -20,6 +20,8 @@ import CheckoutForm from './_newSrc/purchase/CheckoutForm';
 import HomePage from './_newSrc/body/HomePage';
 
 import './Styles/App.scss';
+import About from './_newSrc/body/About';
+import SocialBoard from './_newSrc/body/SocialBoard';
 
 const App = (props) => {
 
@@ -55,13 +57,16 @@ const App = (props) => {
           <Route exact path="/" render={ props => <HomePage {...props} cart={cart} setCart={setCart} /> } />
           <Route path="/cart" render={ props => <Cart  cart={cart} setCart={setCart}  {...props} /> } />
           <Route path="/checkout" render={ props => <CheckoutForm {...props} /> } />
-
+          <Route path="/about" component={ About } />
+          <Route path="/social-board" component={ SocialBoard } />
+          
           {/* <Route exact path='/' component={IntroCard} />
           <Route path="/about" component={AboutUs} /> 
           <Route path="/fan-board" component={FanBoard} />
           <Route path="/contact" component={Contact} /> */}
 
         </Switch>
+        
       </Elements>
       
     </StripeProvider>

@@ -44,8 +44,12 @@ export default ({ choices, chosen, setChosen, cart, setCart, history, location }
 
                 )):
                 < div className='chosen' >
-                
-                    <i class="fas fa-undo fa-3x" onClick={ _ => setChosen([])} />
+
+                    <div className="go-back" onClick={ _ => setChosen([])} >
+
+                        <i class="fas fa-arrow-left fa-3x" /> 
+                        <h1>Go Back</h1>
+                    </div>
                     
                     <div className="choices">
                         <img src={require('../../img/simes_bottle_top_burned.png')} alt="bottle of pepper sauce" className="choice"/>
