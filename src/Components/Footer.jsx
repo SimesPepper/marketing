@@ -1,7 +1,7 @@
 import React from 'react';
 import MediaQuery from 'react-responsive';
-import Nav from './Nav'
-import Logo from './Logo'
+import Nav from './head/Nav'
+import Logo from './head/Logo'
 import '../Styles/footer.scss'
 
 export default _ => {

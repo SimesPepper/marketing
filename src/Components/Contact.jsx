@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Footer from './Footer';
+
+import Header from './head/Header';
+
 import '../Styles/contact.scss';
 
 
@@ -10,9 +12,10 @@ export default _ => {
 
     
     return (
-        <div className="contact_div bordeaux">
             <div className="contact component_container">
-                {/* <h1>WE WANT TO HEAR FROM YOU!</h1> */}
+                
+                <Header />
+
                 <div className="contact_text">
                     <h2>GET IN TOUCH</h2>
                     <h3>
@@ -40,6 +43,6 @@ export default _ => {
                 
             </div>
             
-        </div>
+        
     )
 }

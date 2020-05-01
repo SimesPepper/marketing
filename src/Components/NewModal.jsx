@@ -2,9 +2,9 @@ import React from 'react';
 import { Route, Link } from 'react-router-dom';
 
 import '../Styles/modalStyles.scss';
-import TestCheckout from './TestCheckout';
-import TestIte from './TestIte';
-import PaymentOutcome from './PaymentOutcome';
+import TestCheckout from './payment/TestCheckout';
+import TestIte from './payment/TestIte';
+import PaymentOutcome from './payment/PaymentOutcome';
 
 export default ({ pepperState, cart, setCart, close }) => {
     

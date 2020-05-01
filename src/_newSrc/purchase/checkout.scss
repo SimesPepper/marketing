@@ -1,0 +1,140 @@
+.checkout {
+
+    background: #e2e2e2;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+
+    .order-summary {
+        align-self: flex-start;
+        border: 1px solid black;
+        background-color: white;
+        width: 15%;
+        height: 30vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: .5%;
+        padding: 1%;
+
+
+        .item {
+            height: 25%;
+            display: flex;
+            border-bottom: 1px solid black;
+            font-size: .9rem;
+
+            img {
+                width: 40%;
+            }
+
+            p {
+                // border: 1px solid red;
+                text-align: center;
+                
+            }
+        }
+
+        .summary-results {
+            border: 1px solid black;
+            padding: 1%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+
+            p, h3, h1 {
+                text-align: center;
+                // border: 1px solid red;
+                width: 100%;
+            }
+
+            p {
+                font-size: .8rem;
+            }
+        }
+    }
+
+
+    form {
+        box-sizing: border-box;
+        border: 1px solid black;
+        background-color: white;
+        width: 20%;
+        padding: 2%;
+        // height: 50vh;
+
+       img {
+
+        width: 40%;
+        margin: auto;
+       }
+
+
+        input {
+            border-bottom: 2px solid black;
+            border-radius: 0;
+            padding: 2%;
+            width: 95%;
+            // text-align: center;
+        }
+    
+        .names, .city_state {
+            display: flex;
+            justify-content: space-between;
+    
+            input {
+                width: 43%;
+            }
+        }
+    
+        button {
+            border-radius: 5px;
+        }
+    }
+
+
+    .header2 { // here so the header stays in the active state (black background, smaller than main)
+        
+        display: flex;
+        justify-content: space-between;
+        background: black;
+        opacity: .9;
+        padding: 1%;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+
+        .nav-logo {
+           
+            width: 2.5%;
+            background: white;
+        }
+
+        .nav {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            
+            .nav-links {
+
+                color: white;
+                opacity: .75;
+                font-size: 1.5rem;
+                font-weight: bold;
+                text-decoration: none;
+                font-family: 'Finger Paint', cursive;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    
+
+}

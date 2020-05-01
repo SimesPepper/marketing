@@ -1,0 +1,28 @@
+
+ .footer2 {
+     * {
+         margin: .2%;
+     }
+        display: flex;
+        flex-direction: column;
+        background: black;
+        color: white;
+        opacity: .9;
+        align-items: center;
+        font-size: 1.2rem;
+
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 1%;
+
+        .contacts {
+            display: flex;
+            // font-size: 1.5rem;
+            justify-content: space-between;
+            // border: $debug;
+            width: 5%;
+
+
+        }
+}

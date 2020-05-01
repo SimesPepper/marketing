@@ -1,6 +1,7 @@
 import React from 'react';
 import { getThemeProps } from '@material-ui/styles';
-import CartCheckout from './CartCheckout';
+
+import CartCheckout from './cart/CartCheckout';
 
 export default props => {
 

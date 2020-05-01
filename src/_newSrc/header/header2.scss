@@ -1,0 +1,81 @@
+.header2 {
+    transition: all .5s ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+
+    .nav-logo {
+        transition: all .5s ease-in-out;
+        width: 10%;
+    }
+
+    .nav {
+        width: 50%;
+        display: flex;
+        // border: $debug;
+        align-items: center;
+        justify-content: space-evenly;
+        
+        .nav-links {
+
+            color: white;
+            opacity: .75;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            font-family: 'Finger Paint', cursive;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    .cart { // cart tab that pops up when there's an item in the cart.
+
+        transition: all .3s ease-in-out;
+
+        border: 3px solid #46A049;
+        width: 15%;
+        position: fixed;
+        z-index: 2;
+        right: 2%;
+        top: 15%;
+        color: white;
+        background: black;
+        border-radius: 15px;
+        opacity: 1;
+        font-size: 1.3rem;
+        padding: .5%;
+
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        cursor: pointer;
+        visibility: hidden;
+
+        &.active {
+
+            visibility: visible;
+        }
+    }
+}
+
+.active-header2 {
+
+    transition: all .5s ease-in-out;
+    background: black;
+    opacity: .9;
+    padding: 1%;
+
+    .nav-logo {
+        transition: all .5s ease-in-out;
+        width: 2.5%;
+        background: white;
+    }
+
+}

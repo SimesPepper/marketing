@@ -1,0 +1,46 @@
+
+.home-page {
+
+    .home {
+    
+        height: 100vh;
+        // background-image: url('../../src/img/gray_pepper.jpg');
+        // background-size: 100%;
+        // background-repeat: no-repeat;
+        // background-position: fixed ;
+        position: relative;
+        background: black;
+        opacity: .5;
+    
+       
+    
+        .tag-line {
+    
+            position: absolute;
+            bottom: 50%;
+            right: 40%;
+            font-size: 5rem;
+            color: white;
+            text-shadow: 2px 1px 5px black;
+            border-bottom: 5px solid #42873F;
+    
+    
+        }
+    
+        .sub-tag {
+    
+            position: absolute;
+            font-size: 5rem;
+            color: white;
+            text-shadow: 5px 5px 10px black;
+            bottom: 39.5%;
+            right: 47%;
+    
+            // .exclaim {
+            //     color: #42873F;
+            // }
+    
+        }
+    
+    }
+}
