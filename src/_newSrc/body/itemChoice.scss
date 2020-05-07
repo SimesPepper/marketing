@@ -312,7 +312,7 @@
             border: none;
             flex-direction: column;
             width: 80%;
-            padding: 5%;
+            padding: 1%;
             // border-top: 3px solid black;
             border-bottom: 5px solid black;
 
@@ -328,6 +328,8 @@
 
                 img {
                     width: 35%;
+                    max-height: 25vh;
+                    margin-top: 4%;;
                 }
 
                 .details {
@@ -342,13 +344,15 @@
 
             .buttons {
                 // border: 1px solid red;
+                width: 100%;
                 display: flex;
+                flex-direction: column;
                 justify-content: space-between;
             }
 
             .purchase, .add-to-cart {
                 border: 2px solid black;
-                width: 45%;
+                width: 100%;
                 font-size: 1.5rem;
                 padding: 2% 0;
                 margin: 1% 0;

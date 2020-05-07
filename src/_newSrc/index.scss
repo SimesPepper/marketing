@@ -57,23 +57,30 @@ $debug: 1px solid red;
             right: 47%;
         }
 
-        @media (max-width: 790px) {
+        
+    }
+    
+    @media (max-width: 790px) {
 
+        .home{
+            
             // padding: 5%;
             // display: flex;
             opacity: .55;
             // height: 100%/;
-
+    
             .tag-line, .sub-tag {
                 width: 80%;
                 right: 10%;
                 text-align: center;
                 // text-shadow: 1px 5px 10px green;
             }
-        }
-
-    }
     
+            .tag-line {
+                font-size: 1rem;
+            }
+        }
+    }
 
 }
 
