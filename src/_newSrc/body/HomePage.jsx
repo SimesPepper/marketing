@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import MediaQuery from 'react-responsive';
 
 import Nav from '../header/Nav';
 import Overlay from './Overlay';
@@ -8,8 +9,7 @@ import ItemChoices from './ItemChoices';
 import '../index.scss';
 
 export default ({ cart, setCart, history, location }) => {
-
-    console.log(cart)
+    
 
     const [ choices, setChoices ] = useState([
 
@@ -37,12 +37,47 @@ export default ({ cart, setCart, history, location }) => {
     ]);
 
     const [ chosen, setChosen ] = useState([])
+    const [ className, setClassName ] = useState('')
+
+    useEffect(() => {
+
+       
+
+        window.addEventListener('scroll', () => {
+
+            window.scrollY > 70 ? 
+                setClassName('active-header2'):
+                setClassName('')
+        })
+    }, []) // add active-header2 class to header on scroll away from top
+
 
     return (
 
         <div className="home-page">
-            <Nav cart={cart} history={history} />
+
+            <MediaQuery maxWidth={700}>
+                <img src={require('../../img/cuttingboard_pork.jpg')} className="full-pic" />
+
+                <Nav 
+                cart={cart} 
+                className='mobile' 
+                
+            />
+
+            </MediaQuery>
+
+            <MediaQuery minWidth={800}>
+
+                <Nav 
+                    cart={cart} 
+                    className={className} 
+                    
+                />
+            </MediaQuery>
+
             <Overlay />
+            
             <ItemChoices
                 history={history}
                 location={location}
@@ -52,7 +87,11 @@ export default ({ cart, setCart, history, location }) => {
                 cart={cart}
                 setCart={setCart}
             />
-            <Footer />
+
+            <MediaQuery minWidth={790}>
+                <Footer />
+            </MediaQuery>
+
         </div>
     )
 }

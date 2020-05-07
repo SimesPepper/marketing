@@ -61,9 +61,17 @@
 
         h1 {
             transition: all .3s ease-in-out;
-
+            font-size: 2.7rem;
         }
 
+        i {
+            // color: red;
+            transition: all .3s ease-in-out;
+            font-size: 3rem;
+            margin-right: 5%;
+
+            
+        }
 
         &:hover {
             border-color: red;
@@ -82,20 +90,9 @@
             }
         }
 
-        i {
-            // color: red;
-            transition: all .3s ease-in-out;
-            font-size: 3rem;
-            margin-right: 5%;
+        
 
-            
-        }
-
-        h1 {
-
-            font-size: 2.7rem;
-
-        }
+      
     }
 
 
@@ -132,6 +129,35 @@
             display: flex;
             justify-content: space-evenly;
             align-items: center;
+
+            i {
+                cursor: pointer;
+                transition: all .1s ease-in-out;
+
+                &.fa-minus-circle {
+                    color: red;
+
+                }
+
+                &:hover {
+                    transform: scale(1.3);
+
+                    &.fa-plus {
+
+                        color: green;
+                    }
+
+                    &.fa-minus {
+
+                        color: red;
+                    }
+
+                    &.fa-minus-circle {
+
+                        color: red;
+                    }
+                }
+            }
 
         }
 
@@ -195,6 +221,96 @@
 
         &:focus {
             outline: none;
+        }
+    }
+
+
+    @media (max-width: 790px) {
+
+        // border: 1px solid red;
+        // background: url('../../img/bottles_of_sauce.jpg') no-repeat;
+
+        .main-pic {
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .cart-item-container {
+            height: 100%;
+            width: 100%;
+            // background: black;
+            opacity: .7;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            background: black;
+            opacity: .8;
+
+
+            .cart-item {
+
+                z-index: 1;
+                flex-direction: column;
+                width: 50%;
+                height: 25%;
+                // border: 2px solid yellow;
+                color: white;
+                // background-color: gray;
+                // opacity: 1;
+    
+                .remove, .quantity, .item-total {
+                    width: 100%;
+                    border-color: white;
+                }
+    
+                
+            }
+        }
+
+        .go-back {
+
+            border-color: red;
+            background-color: white;
+            margin: 2% 0;
+            
+            i {
+                color: red;
+            }
+
+            h1 {
+                color: red;
+            }
+
+            &:hover {
+
+                i {
+
+                    transform: translateX(-300px);
+                }
+
+                h1 {
+                    transform: translateX(-30px);
+    
+    
+                }
+
+            }
+        }
+        .sub-total {
+
+            position: initial; 
+            width: 50%;
+            align-self: center;
+            justify-content: center;
+            margin-top: 2%;
+        }
+
+        .go-back, .sub-total {
+
+            width: 50%;
         }
     }
 

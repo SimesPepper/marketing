@@ -15,14 +15,34 @@
         bottom: 0;
         width: 100%;
         padding: 1%;
+    
 
         .contacts {
             display: flex;
             // font-size: 1.5rem;
             justify-content: space-between;
-            // border: $debug;
+            // border: 1px solid red;
             width: 5%;
 
 
+
+
         }
+
+        @media (max-width: 790px) {
+
+            position: fixed;
+            bottom: -12%;
+            transition: all .3s ease;
+
+            .contacts {
+                // justify-content: ;
+                width: 15%;
+            }
+
+            &.slide-up {
+                bottom: 0;
+            }
+        }
+        
 }

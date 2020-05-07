@@ -1,4 +1,5 @@
 import React from 'react';
+import MediaQuery from 'react-responsive';
 
 import Nav from '../header/Nav';
 import Footer from '../footer/Footer';
@@ -10,7 +11,15 @@ export default _ => {
     return(
 
         <div className="about">
-            <Nav />
+            <MediaQuery minWidth={800}>
+
+                <Nav />
+            </MediaQuery>
+
+            <MediaQuery maxWidth={790}>
+
+                <Nav className="mobile" />
+            </MediaQuery>
 
             <div className="overlay"></div>
 

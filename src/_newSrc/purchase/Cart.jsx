@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import MediaQuery from 'react-responsive';
 
 import Footer from '../footer/Footer';
 import Header from '../header/Nav';
@@ -73,44 +74,82 @@ export default ({ cart, setCart, history, location }) => {
         setCart([...cart.filter( cartItems => cartItems.heat !== item.heat )])
     }
 
- 
 
-   console.log(history)
-   console.log(cache)
-    return (
+    return ( 
 
         <div className="cart-page">
-            <Header />
 
-            <div className="go-back" onClick={e => history.goBack()} >
+            <MediaQuery maxWidth={790} >
 
-                <i class="fas fa-arrow-left fa-3x" /> 
-                <h1>Go Back</h1>
-            </div>
+                <img src={require('../../img/bottles_of_sauce.jpg')} className='main-pic' />
 
-            {
-                filteredCart && filteredCart.map(item => (
+                <div className="cart-item-container">
+                {
+                    filteredCart && filteredCart.map(item => (
+                            <div className="cart-item">
+                                <div className="remove">
+                                    <i class="fas fa-minus-circle" onClick={e => clearQuantity(item)} />
+                                    <img src={require('../../img/simes_bottle_burned.png')} alt={`bottle of si'me's pepper sauce, ${item.heat}`} />
+                                    <p> {item.heat} </p>
+                                </div>
 
-                    <div className="cart-item">
-                        <div className="remove">
-                            <i class="fas fa-minus-circle" onClick={e => clearQuantity(item)} />
-                            <img src={require('../../img/simes_bottle_burned.png')} alt={`bottle of si'me's pepper sauce, ${item.heat}`} />
-                            <p> {item.heat} </p>
+                                <p className="quantity">
+                                    Quantity: {item.quantity}
+                                    <i class="fas fa-plus" onClick={ e => addToCartQuantity(item) } />
+                                    <i class="fas fa-minus" onClick={ e => removeFromCartQuantity(item) } />
+                                </p>
+
+                                <p className="item-total">Item total: ${item.price}</p>
+                            </div>
+
+))
+}
+
+                <div className="go-back" onClick={e => history.goBack()} >
+
+                    <i class="fas fa-arrow-left fa-3x" /> 
+                    <h1>Go Back</h1>
+                </div>
+                
+                <Link to={{pathname:'/checkout', state:{cart: filteredCart, total: subTotal}}} className="sub-total"><p  >Checkout: ${subTotal}</p></Link>
+                </div>
+                
+            </MediaQuery>
+
+            <MediaQuery minWidth={800}>
+
+                <Header />
+
+                <div className="go-back" onClick={e => history.goBack()} >
+
+                    <i class="fas fa-arrow-left fa-3x" /> 
+                    <h1>Go Back</h1>
+                </div>
+
+                {
+                    filteredCart && filteredCart.map(item => (
+
+                        <div className="cart-item">
+                            <div className="remove">
+                                <i class="fas fa-minus-circle" onClick={e => clearQuantity(item)} />
+                                <img src={require('../../img/simes_bottle_burned.png')} alt={`bottle of si'me's pepper sauce, ${item.heat}`} />
+                                <p> {item.heat} </p>
+                            </div>
+
+                            <p className="quantity">
+                                Quantity: {item.quantity}
+                                <i class="fas fa-plus" onClick={ e => addToCartQuantity(item) } />
+                                <i class="fas fa-minus" onClick={ e => removeFromCartQuantity(item) } />
+                            </p>
+
+                            <p className="item-total">Item total: ${item.price}</p>
                         </div>
-
-                        <p className="quantity">
-                            Quantity: {item.quantity}
-                            <i class="fas fa-plus" onClick={ e => addToCartQuantity(item) } />
-                            <i class="fas fa-minus" onClick={ e => removeFromCartQuantity(item) } />
-                        </p>
-
-                        <p className="item-total">Item total: ${item.price}</p>
-                    </div>
-                ))
-            }
-            <Link to={{pathname:'/checkout', state:{cart: filteredCart, total: subTotal}}}><p className="sub-total" >Checkout: ${subTotal}</p></Link>
-            
-            <Footer />
+                    ))
+                }
+                <Link to={{pathname:'/checkout', state:{cart: filteredCart, total: subTotal}}}><p className="sub-total" >Checkout: ${subTotal}</p></Link>
+                
+                <Footer />
+            </MediaQuery>
         </div>
     )
 

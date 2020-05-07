@@ -1,36 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-
+import MediaQuery from 'react-responsive';
 import './header2.scss';
 
-export default _ => {
+export default props => {
 
 
-    useEffect(() => {
-
-        const navHeader = document.querySelector('.header2');
-
-        window.addEventListener('scroll', () => {
-
-            window.scrollY > 70 ? 
-                navHeader.classList.add('active-header2'):
-                navHeader.classList.remove('active-header2')
-        })
-    }, []) // add active-header2 class to header on scroll away from top
-
+    
+    
 
     return (
-        <div className="header2">
+        <div className={`header2 ${props.className || 'standard'}`}>
 
-         
+            <MediaQuery minWidth={800}>
                 <img className="nav-logo" src={require('../../img/white_logo.png')} alt="si'me's pepper logo"/>
+            </MediaQuery>
+
+            
          
 
             <nav className="nav">
                 <NavLink to="/" className="nav-links" href="#"> WELCOME </NavLink>
                 <NavLink to="/about" className="nav-links" > ABOUT </NavLink>
                 <NavLink to="/social-board" className="nav-links" > SOCIAL BOARD </NavLink>
-                <NavLink to="/contact" className="nav-links" > CONTACT </NavLink>
+                <NavLink to="/contact-us" className="nav-links" > CONTACT </NavLink>
             </nav>
         </div>
     )

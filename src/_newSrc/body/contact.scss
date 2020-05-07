@@ -1,0 +1,109 @@
+.contact-us {
+
+    // border: 1px solid red;
+    // width: 75%;
+    margin:  6% auto;
+    
+
+    
+    form {
+        margin: 0;
+        background: white;
+        width: 40%;
+        // border: 1px solid black;
+        padding: 2%;
+        margin: auto;
+        
+
+
+        .contact-info {
+
+            width: 100%;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // border-bottom: 2px solid black;
+            padding: 2%;
+            margin-bottom: 5%;
+
+            .comp-name {
+
+                // text-align: center;
+                text-decoration: underline;
+                text-decoration-color: black;
+                font-size: 1.8rem;
+                color: green;
+
+                .i {
+                    color: red;
+                }
+            }
+    
+            img {
+                width: 20%;
+                border-right: 2px solid black;
+                margin-right: 2%;
+                // margin-left: 6%;
+                padding-right: 2%;
+            }
+
+            .text {
+                font-size: 1rem;
+                font-family: "Oregano", cursive;
+                // border-left: 2px solid black;
+                // border-bottom: 2px solid black;
+            }
+
+            .insta-name {
+                // border-bottom: 2px solid black;
+            }
+        }
+    
+        
+        input, textarea {
+
+            border-bottom: 2px solid black;
+            border-radius: 0;
+            padding: 1%;
+            outline: none;
+            max-width: 100%;
+            max-height: fit-content;
+        }
+
+        .name {
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            // border: 1px solid red;
+
+            .name {
+                width: 45%;
+            }
+
+            
+        }
+
+        .email {
+            
+            width: 100%;
+        }
+
+        
+    }
+
+    @media (max-width: 790px) {
+        
+        border: 2px solid red;
+        height: 100vh;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        form {
+            width: 90%;
+            margin: auto auto;
+        }
+    }
+}

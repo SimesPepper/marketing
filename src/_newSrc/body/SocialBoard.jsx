@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import MediaQuery from 'react-responsive';
 
 import Header from '../header/Nav';
 import Footer from '../footer/Footer';
@@ -49,48 +50,59 @@ export default _ => {
         }
     ])
 
-    const [comment, setComment] = useState('')
+    const [file, setFile] = useState()
 
-    const display = () => {
+    const hideInput = () => {
 
-        console.log(comment)
-    }
+        const input = document.querySelector('.upload-container')
+        input.classList.toggle('show-input')
+        
+    }   
 
-    console.log(comment)
+ 
+
+    window.addEventListener('scroll', () => {
+
+        const footer = document.querySelector('.footer2')
+
+        window.scrollY > 500 ? footer.classList.add('slide-up'): footer.classList.remove('slide-up')
+        
+
+    })
+
     return (
         <div className="social-board">
-            <Header />
-            <div className="profile-info">
-                <img src={require('../../img/white_logo.png')} alt=""/>
-                <div className="info">
 
-                    <a href="https://www.instagram.com/simes.pepper/">
-                        <h2>@simes.pepper</h2>
-                    </a>
+            <MediaQuery minWidth={800}>
 
-                    <div className="text">
-                        <p>Share your Si'me's moments with us!</p>
-                        <p>Submit your entry here. . . </p>
-                    </div>
-                    
-                    <input type="file" name="picSubmitted" />
-                </div>
-            </div>
+                <Header />
+            </MediaQuery>
+            <MediaQuery maxWidth={790}>
+
+                <Header className="mobile" />
+            </MediaQuery>
+            
 
             <div className="board">
                 {
 
                     state.map(item => (
                     
-                        <div className="post-item" onClick={display}>
-                            <div className="overlay" />
+                        <div className="post-item" >
+
+
+                            <div className="icon-container">
+
+                                <div className="icons">
+                                    <i class="far fa-heart fa-3x" />
+                                    <i class="far fa-comment fa-3x"  />
+                                </div>
+                                <p> 200 Likes</p>
+
+                            </div>
+
                             <img src={item.link} />
 
-                            <div className="comment-section">
-                                <i class="far fa-heart fa-2x" />
-                                <i class="far fa-comment fa-2x" />
-                                <input type="text"  onChange={e => setComment(e.target.value)}  />
-                            </div>
 
                         </div>
                     
@@ -98,7 +110,25 @@ export default _ => {
                 }
             </div>
 
-            <Footer />
+            <div className="upload-container">
+
+                <input type="text" placeholder="Your photo caption. . ." />
+
+                <input type="file" name="file" id="file"/>
+
+                <label htmlFor="file" aria-lable="file" for="file">
+                    {/* <i class="fas fa-upload fa-3x" /> */}
+                    Choose your file . . 
+                </label>
+
+            </div>
+
+            <i class="fas fa-plus-circle fa-6x" onClick={hideInput}></i>
+            
+            <MediaQuery minWidth={800}>
+
+                <Footer />
+            </MediaQuery>
         </div>
     )
 }

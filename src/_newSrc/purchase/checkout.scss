@@ -5,11 +5,11 @@
     flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
-    margin-top: 5%;
+    margin-top: 6%;
 
     .order-summary {
         align-self: flex-start;
-        border: 1px solid black;
+        // border: 1px solid black;
         background-color: white;
         width: 15%;
         height: 30vh;
@@ -60,7 +60,6 @@
 
     form {
         box-sizing: border-box;
-        border: 1px solid black;
         background-color: white;
         width: 20%;
         padding: 2%;
@@ -96,43 +95,90 @@
     }
 
 
-    .header2 { // here so the header stays in the active state (black background, smaller than main)
+    @media (max-width: 790px) {
+
+        // border: 1px solid red;
+        margin: 0;
+        // height: 100vh;
+        flex-direction: column;
         
-        display: flex;
-        justify-content: space-between;
-        background: black;
-        opacity: .9;
-        padding: 1%;
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 1;
 
-        .nav-logo {
-           
-            width: 2.5%;
-            background: white;
-        }
+        .order-summary {
+            align-self: center;
+            width: 75%;
+            margin: 3%;
+            height: auto;
 
-        .nav {
-            width: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-            
-            .nav-links {
+            .item {
+                height: auto;
+                justify-content: space-between;
 
-                color: white;
-                opacity: .75;
-                font-size: 1.5rem;
-                font-weight: bold;
-                text-decoration: none;
-                font-family: 'Finger Paint', cursive;
+                .columns {
 
-                &:hover {
-                    opacity: 1;
+                    // padding: 2%;
+                    display: grid;
+                    grid-template-columns: 1fr;
+
+                    .cat {
+
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                    }
+
+                    width: 70%;
+                    // border: 1px solid red;
+                    
+                    .item-description {
+
+                        width: 100%;
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        
+                    }
+                }
+
+
+                img, p {
+                    transition: all .3s ease;
+                    display: none;
+                }
+
+                &.item-open {
+
+                    img, p {
+                        display: initial;
+                    }
                 }
             }
+
+            .summary-results {
+
+                cursor: pointer;
+
+                i {
+                    transition: all .3s ease;
+                    margin: auto;
+
+                    &.arrow-open {
+
+                        transform: rotate(180deg);
+                    }
+                }
+
+                &:hover {
+
+                    i {
+
+                        transform: scale(1.5);
+
+                    }
+                }
+
+            }
+        }
+
+        form {
+            width: 75%;
         }
     }
     

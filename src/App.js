@@ -8,7 +8,7 @@ import React, { useState, useEffect } from 'react';
 import {StripeProvider, Elements} from 'react-stripe-elements';
 import { Controller, Scene } from 'react-scrollmagic';
 
-import Footer from './Components/Footer';
+import Footer from './_newSrc/footer/Footer';
 import AboutUs from './Components/AboutUs'
 import Contact from './Components/Contact';
 import Cart from './_newSrc/purchase/Cart';
@@ -22,6 +22,7 @@ import HomePage from './_newSrc/body/HomePage';
 import './Styles/App.scss';
 import About from './_newSrc/body/About';
 import SocialBoard from './_newSrc/body/SocialBoard';
+import ContactUs from './_newSrc/body/ContacUs';
 
 const App = (props) => {
 
@@ -45,12 +46,35 @@ const App = (props) => {
   }, [])
 
 
+  const toggleMenu = _ => {
+
+    const menu = document.querySelector('.header2')
+    const menuButton = document.querySelector('.hamburger')
+
+    menuButton.classList.toggle('close')
+    menu.classList.toggle('show')
+}
+
+
   return (
     <StripeProvider
       stripe={stripe}
       apiKey={ process.env.APIKEY  || "pk_live_adoCNhh7KNUkcjSnyRScAH1A00SPJuwx04" }
     >
       <Elements>
+
+        <>
+        
+
+            <MediaQuery maxWidth={790}>
+                <div className="hamburger" onClick={toggleMenu}>
+
+                    <div className="line" />
+                    <div className="line" />
+                    <div className="line" />
+
+                </div>
+            </MediaQuery>
 
         <Switch className="app">
 
@@ -59,13 +83,18 @@ const App = (props) => {
           <Route path="/checkout" render={ props => <CheckoutForm {...props} /> } />
           <Route path="/about" component={ About } />
           <Route path="/social-board" component={ SocialBoard } />
-          
+          <Route path="/contact-us" component={ ContactUs } />
           {/* <Route exact path='/' component={IntroCard} />
           <Route path="/about" component={AboutUs} /> 
           <Route path="/fan-board" component={FanBoard} />
           <Route path="/contact" component={Contact} /> */}
 
         </Switch>
+
+        <MediaQuery maxWidth={790}>
+          <Footer />
+        </MediaQuery>
+        </>
         
       </Elements>
       

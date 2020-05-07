@@ -5,6 +5,18 @@ import './footer.scss'
 
 export default _ => {  
 
+    useEffect(() => {
+
+        window.addEventListener('scroll', () => {
+
+            window.scrollY >= 900 ?
+            document.querySelector('.footer2').classList.add('slide-up'):
+            document.querySelector('.footer2').classList.remove('slide-up')
+
+        })
+
+    })
+
     return (
         <div className="footer2" >
 

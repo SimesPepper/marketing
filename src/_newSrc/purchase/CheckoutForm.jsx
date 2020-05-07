@@ -2,6 +2,7 @@ import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { CardElement, injectStripe } from 'react-stripe-elements';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import MediaQuery from 'react-responsive';
 
 import './checkout.scss';
 import Footer from '../footer/Footer';
@@ -80,35 +81,55 @@ const Form = props => {
     }
 
 
-// console.log(amount)
+    const openItem = _ => {
+        document.querySelector('.item').classList.toggle('item-open')
+        document.querySelector('.arrow').classList.toggle('arrow-open')
+    }
    
 
     return(
         <div className="checkout">
 
-            <Nav />
+            <MediaQuery minWidth={800}>
+
+                <Nav />
+            </MediaQuery>
+            <MediaQuery maxWidth={790}>
+
+                <Nav className="mobile" />
+            </MediaQuery>
 
             <div className="order-summary">
 
-                {
-                    props.location.state.cart.map(item => (
+                <div className="item" >
+                    <img src={require('../../img/simes_bottle_top_burned.png')} alt=""/>
 
-                        <div className="item">
-                            <img src={require('../../img/simes_bottle_top_burned.png')} alt=""/>
-                            <p>quantity {item.quantity} </p>
-                            <p>flavor {item.heat} </p>
-                            <p>total ${item.price} </p>
+                    <div className="columns">
+                        <div className="cat">
+
+                            <p>Quantity</p>
+                            <p>flavor</p>
+                            <p>total</p>
                         </div>
-                        
-                    ))
-                }
+                        {
+                            props.location.state.cart.map(item => (
+                                <div className="item-description">
+                                    <p> { item.quantity || 1 } </p>
+                                    <p> { item.heat } </p>
+                                    <p> ${ item.price } </p>
+                                </div>
+                                
+                            ))
+                        }
+                    </div>
+                </div>
 
-                <div className="summary-results">
+                <div className="summary-results" onClick={openItem}>
 
                     <p>Subtotal: ${ props.location.state.total }  </p>
                     <p style={{textDecoration: amount>39? 'line-through': 'none'}} >Shipping: { amount > 39 ? '$0.00': '$5.00'} </p>
                     <h1>Total: ${ amount } </h1>
-
+                    <i class="fas fa-angle-down fa-2x arrow"></i>
                 </div>
 
 
@@ -197,8 +218,10 @@ const Form = props => {
                     }
                 </button>
             </form> 
+            <MediaQuery minWidth={800}>
 
-            <Footer />
+                <Footer />
+            </MediaQuery>
 
         </div>
 
