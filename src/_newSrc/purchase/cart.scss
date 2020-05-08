@@ -8,45 +8,6 @@
     align-items: center;
     // padding: 5%;
 
-    .header2 { // here so the header stays in the active state (black background, smaller than main)
-        
-        display: flex;
-        justify-content: space-between;
-        background: black;
-        opacity: .9;
-        padding: 1%;
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 1;
-
-        .nav-logo {
-           
-            width: 2.5%;
-            background: white;
-        }
-
-        .nav {
-            width: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-            
-            .nav-links {
-
-                color: white;
-                opacity: .75;
-                font-size: 1.5rem;
-                font-weight: bold;
-                text-decoration: none;
-                font-family: 'Finger Paint', cursive;
-
-                &:hover {
-                    opacity: 1;
-                }
-            }
-        }
-    }
 
     .go-back {
 
@@ -225,7 +186,7 @@
     }
 
 
-    @media (max-width: 790px) {
+    @media (max-width: 800px) {
 
         // border: 1px solid red;
         // background: url('../../img/bottles_of_sauce.jpg') no-repeat;
@@ -239,7 +200,6 @@
         .cart-item-container {
             height: 100%;
             width: 100%;
-            // background: black;
             opacity: .7;
             display: flex;
             flex-direction: column;
@@ -249,12 +209,11 @@
             background: black;
             opacity: .8;
 
-
             .cart-item {
 
                 z-index: 1;
                 flex-direction: column;
-                width: 50%;
+                width: 90%;
                 height: 25%;
                 // border: 2px solid yellow;
                 color: white;
@@ -268,50 +227,49 @@
     
                 
             }
-        }
 
-        .go-back {
-
-            border-color: red;
-            background-color: white;
-            margin: 2% 0;
-            
-            i {
-                color: red;
-            }
-
-            h1 {
-                color: red;
-            }
-
-            &:hover {
-
+            .go-back {
+    
+                border-color: red;
+                background-color: white;
+                margin: 2% 0;
+                width: 90%;
+                
                 i {
-
-                    transform: translateX(-300px);
+                    color: red;
                 }
-
+    
                 h1 {
-                    transform: translateX(-30px);
+                    color: red;
+                }
     
+                &:hover {
+    
+                    i {
+    
+                        transform: translateX(-300px);
+                    }
+    
+                    h1 {
+                        transform: translateX(-30px);
+        
+        
+                    }
     
                 }
-
             }
+            .sub-total {
+    
+                position: initial; 
+                width: 90%;
+                align-self: center;
+                justify-content: center;
+                margin-top: 2%;
+            }
+    
+           
         }
-        .sub-total {
 
-            position: initial; 
-            width: 50%;
-            align-self: center;
-            justify-content: center;
-            margin-top: 2%;
-        }
-
-        .go-back, .sub-total {
-
-            width: 50%;
-        }
     }
 
   

@@ -94,7 +94,6 @@
 
     @media (max-width: 790px) {
         
-        border: 2px solid red;
         height: 100vh;
         margin: auto;
         display: flex;
@@ -104,6 +103,13 @@
         form {
             width: 90%;
             margin: auto auto;
+            padding: 5%;
+            .contact-info {
+
+                img {
+                    display: none;
+                }
+            }
         }
     }
 }

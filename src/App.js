@@ -78,7 +78,7 @@ const App = (props) => {
 
         <Switch className="app">
 
-          <Route exact path="/" render={ props => <HomePage {...props} cart={cart} setCart={setCart} /> } />
+          <Route exact path="/" render={ props => <HomePage {...props} cart={cart} setCart={setCart} toggleMenu={toggleMenu} /> } />
           <Route path="/cart" render={ props => <Cart  cart={cart} setCart={setCart}  {...props} /> } />
           <Route path="/checkout" render={ props => <CheckoutForm {...props} /> } />
           <Route path="/about" component={ About } />

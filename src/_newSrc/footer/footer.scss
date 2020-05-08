@@ -32,12 +32,14 @@
         @media (max-width: 790px) {
 
             position: fixed;
-            bottom: -12%;
+            bottom: -18.5%;
             transition: all .3s ease;
 
             .contacts {
                 // justify-content: ;
-                width: 15%;
+                width: 40%;
+                // border: 1px solid red;
+                padding: 2%;
             }
 
             &.slide-up {

@@ -8,7 +8,7 @@ import ItemChoices from './ItemChoices';
 
 import '../index.scss';
 
-export default ({ cart, setCart, history, location }) => {
+export default ({ cart, setCart, history, location, match }) => {
     
 
     const [ choices, setChoices ] = useState([
@@ -52,6 +52,7 @@ export default ({ cart, setCart, history, location }) => {
     }, []) // add active-header2 class to header on scroll away from top
 
 
+
     return (
 
         <div className="home-page">
@@ -62,6 +63,9 @@ export default ({ cart, setCart, history, location }) => {
                 <Nav 
                 cart={cart} 
                 className='mobile' 
+                history={history}
+                location={location}
+                match={match}
                 
             />
 
@@ -72,7 +76,6 @@ export default ({ cart, setCart, history, location }) => {
                 <Nav 
                     cart={cart} 
                     className={className} 
-                    
                 />
             </MediaQuery>
 

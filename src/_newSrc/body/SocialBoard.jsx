@@ -75,7 +75,7 @@ export default _ => {
 
             <MediaQuery minWidth={800}>
 
-                <Header />
+                <Header className="standard" />
             </MediaQuery>
             <MediaQuery maxWidth={790}>
 
@@ -123,7 +123,8 @@ export default _ => {
 
             </div>
 
-            <i class="fas fa-plus-circle fa-6x" onClick={hideInput}></i>
+            <a href="https://www.instagram.com/simes.pepper/" target="_blank"><i class="fab fa-instagram social-insat fa-7x"></i></a>
+            {/* <i class="fas fa-plus-circle fa-6x" onClick={hideInput}></i> */}
             
             <MediaQuery minWidth={800}>
 

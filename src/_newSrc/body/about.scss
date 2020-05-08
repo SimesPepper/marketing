@@ -73,17 +73,34 @@
     @media (max-width: 790px) {
 
         flex-direction: column-reverse;
+        height: auto;
+
+        overflow: scroll;
+
+        .overlay {
+            height: 100%;
+        }
+
 
         .text-container {
             border: none;
-
-            width: 80%;
+            height: auto;
+            width: 100%;
+            padding: 10%;
             // border: 2px solid red;
+
+            p {
+                margin: 2% 0;
+            }
         }
 
         .statement {
             border: none;
-            width: 80%;
+            width: 100%;
+
+            img {
+                max-width: 65%;
+            }
         }
     }
 

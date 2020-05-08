@@ -6,11 +6,21 @@ import './header2.scss';
 export default props => {
 
 
+    useEffect(() => {
+
+        if(props.className === 'mobile'){
+
+            const menuButton = document.querySelector('.hamburger')
+            const menu = document.querySelector('.header2')
     
+            menu.classList.contains('show')? menuButton.classList.add('close'): menuButton.classList.remove('close')
+        }
+
+    }, [props.className])
     
 
     return (
-        <div className={`header2 ${props.className || 'standard'}`}>
+        <div className={`header2 ${props.className}`}>
 
             <MediaQuery minWidth={800}>
                 <img className="nav-logo" src={require('../../img/white_logo.png')} alt="si'me's pepper logo"/>
@@ -20,7 +30,7 @@ export default props => {
          
 
             <nav className="nav">
-                <NavLink to="/" className="nav-links" href="#"> WELCOME </NavLink>
+                <NavLink to="/" className="nav-links" > WELCOME </NavLink>
                 <NavLink to="/about" className="nav-links" > ABOUT </NavLink>
                 <NavLink to="/social-board" className="nav-links" > SOCIAL BOARD </NavLink>
                 <NavLink to="/contact-us" className="nav-links" > CONTACT </NavLink>

@@ -193,7 +193,7 @@
         // width: auto;
     }
 
-    .fa-plus-circle {
+    .social-insat {
 
         color: dodgerblue;
         cursor: pointer;
@@ -201,6 +201,14 @@
         position: fixed;
         bottom: 17%;
         right: 5%;
+
+        &:hover {
+
+            transform: scale(1.2);
+            color: purple;
+        }
+
+   
 
     }
 
@@ -230,7 +238,19 @@
 
         }
 
-        .fa-plus-circle {
+        .upload-container {
+
+            background-color: white;
+            height: auto;
+            bottom: 3%;
+            right: 20%;
+            input {
+
+                padding: 5%;
+            }
+        }
+
+        .social-insat {
 
             right: 2.5%;
             bottom: 3%;

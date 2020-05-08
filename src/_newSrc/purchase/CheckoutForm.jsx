@@ -7,6 +7,7 @@ import MediaQuery from 'react-responsive';
 import './checkout.scss';
 import Footer from '../footer/Footer';
 import Nav from '../header/Nav';
+import OrderSummary from './OrderSummary';
 
 const Form = props => {
     
@@ -92,48 +93,18 @@ const Form = props => {
 
             <MediaQuery minWidth={800}>
 
-                <Nav />
+                <Nav className="standard" />
             </MediaQuery>
             <MediaQuery maxWidth={790}>
 
                 <Nav className="mobile" />
             </MediaQuery>
 
-            <div className="order-summary">
-
-                <div className="item" >
-                    <img src={require('../../img/simes_bottle_top_burned.png')} alt=""/>
-
-                    <div className="columns">
-                        <div className="cat">
-
-                            <p>Quantity</p>
-                            <p>flavor</p>
-                            <p>total</p>
-                        </div>
-                        {
-                            props.location.state.cart.map(item => (
-                                <div className="item-description">
-                                    <p> { item.quantity || 1 } </p>
-                                    <p> { item.heat } </p>
-                                    <p> ${ item.price } </p>
-                                </div>
-                                
-                            ))
-                        }
-                    </div>
-                </div>
-
-                <div className="summary-results" onClick={openItem}>
-
-                    <p>Subtotal: ${ props.location.state.total }  </p>
-                    <p style={{textDecoration: amount>39? 'line-through': 'none'}} >Shipping: { amount > 39 ? '$0.00': '$5.00'} </p>
-                    <h1>Total: ${ amount } </h1>
-                    <i class="fas fa-angle-down fa-2x arrow"></i>
-                </div>
-
-
-            </div>
+            <OrderSummary
+                location={props.location}
+                openItem={openItem}
+                amount={amount}
+            />
 
             
             <form onSubmit={e => handleSubmit(e)}>

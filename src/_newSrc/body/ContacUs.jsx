@@ -18,7 +18,7 @@ export default _ => {
 
             <MediaQuery minWidth={800}>
 
-                <Header />
+                <Header className="standard" />
             </MediaQuery>
 
             <form >

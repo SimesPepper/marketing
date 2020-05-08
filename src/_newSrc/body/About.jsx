@@ -13,7 +13,7 @@ export default _ => {
         <div className="about">
             <MediaQuery minWidth={800}>
 
-                <Nav />
+                <Nav className="standard"/>
             </MediaQuery>
 
             <MediaQuery maxWidth={790}>
