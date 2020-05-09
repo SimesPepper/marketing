@@ -36,7 +36,7 @@
     
         .tag-line {
     
-            margin-right: 10%;
+            // margin-right: 10%;
             font-size: 5rem;
             color: white;
             text-shadow: 2px 1px 5px black;
@@ -48,11 +48,11 @@
         .sub-tag {
     
             font-size: 5rem;
-            margin-right: 10%;
+            // margin-right: 10%;
             color: white;
             text-shadow: 5px 5px 10px black;
             // border: 1px solid red;
-            min-width: 45%;
+            // min-width: 45%;
             text-align: center;
         }
     
@@ -82,9 +82,6 @@
                 // text-shadow: 1px 5px 10px green;
             }
     
-            .tag-line {
-                // font-size: 2.5rem;
-            }
         }
     }
 }

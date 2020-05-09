@@ -135,7 +135,7 @@
     form {
         box-sizing: border-box;
         background-color: white;
-        max-width: 20%;
+        max-width: 100%;
         width: 18%;
         min-width: 15%;
         padding: 2%;
@@ -173,11 +173,10 @@
 
     @media (max-width: 790px) {
 
-        // border: 1px solid red;
         margin: 0;
-        // height: 100vh;
+        height: 100vh;
         flex-direction: column;
-        
+        justify-content: center;
 
         .order-summary {
             width: 75%;

@@ -76,7 +76,7 @@
     width: 50%;
     background-color: black;
     opacity: .8;
-    // visibility: hidden;
+    visibility: hidden;
     // z-index: 3;
     position: fixed;
     left: -50%;
@@ -86,7 +86,7 @@
 
         // border: 1px solid red;
         height: 100%;
-        width: 100%;
+        min-width: 100%;
         flex-direction: column;
 
         .nav-links {
