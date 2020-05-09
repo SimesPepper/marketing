@@ -2,6 +2,7 @@ import React from 'react';
 import Nav from '../header/Nav';
 import MediaQuery from 'react-responsive';
 
+import './home.scss';
 
 export default _ => {
 

@@ -63,38 +63,38 @@ const App = (props) => {
     >
       <Elements>
 
-        <>
+        <div className="app">
         
 
-            <MediaQuery maxWidth={790}>
-                <div className="hamburger" onClick={toggleMenu}>
+          <MediaQuery maxWidth={790}>
+              <div className="hamburger" onClick={toggleMenu}>
 
-                    <div className="line" />
-                    <div className="line" />
-                    <div className="line" />
+                  <div className="line" />
+                  <div className="line" />
+                  <div className="line" />
 
-                </div>
-            </MediaQuery>
+              </div>
+          </MediaQuery>
 
-        <Switch className="app">
+          <Switch className="app">
 
-          <Route exact path="/" render={ props => <HomePage {...props} cart={cart} setCart={setCart} toggleMenu={toggleMenu} /> } />
-          <Route path="/cart" render={ props => <Cart  cart={cart} setCart={setCart}  {...props} /> } />
-          <Route path="/checkout" render={ props => <CheckoutForm {...props} /> } />
-          <Route path="/about" component={ About } />
-          <Route path="/social-board" component={ SocialBoard } />
-          <Route path="/contact-us" component={ ContactUs } />
-          {/* <Route exact path='/' component={IntroCard} />
-          <Route path="/about" component={AboutUs} /> 
-          <Route path="/fan-board" component={FanBoard} />
-          <Route path="/contact" component={Contact} /> */}
+            <Route exact path="/" render={ props => <HomePage {...props} cart={cart} setCart={setCart} toggleMenu={toggleMenu} /> } />
+            <Route path="/cart" render={ props => <Cart  cart={cart} setCart={setCart}  {...props} /> } />
+            <Route path="/checkout" render={ props => <CheckoutForm {...props} /> } />
+            <Route path="/about" component={ About } />
+            <Route path="/social-board" component={ SocialBoard } />
+            <Route path="/contact-us" component={ ContactUs } />
+            {/* <Route exact path='/' component={IntroCard} />
+            <Route path="/about" component={AboutUs} /> 
+            <Route path="/fan-board" component={FanBoard} />
+            <Route path="/contact" component={Contact} /> */}
 
-        </Switch>
+          </Switch>
 
-        <MediaQuery maxWidth={790}>
-          <Footer />
-        </MediaQuery>
-        </>
+          <MediaQuery maxWidth={790}>
+            <Footer />
+          </MediaQuery>
+        </div>
         
       </Elements>
       

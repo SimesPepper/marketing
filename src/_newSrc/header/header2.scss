@@ -5,6 +5,7 @@
     position: fixed;
     top: 0;
     width: 100%;
+    // min-width: 50%;
     z-index: 1;
 
     .nav-logo {
@@ -13,11 +14,12 @@
     }
 
     .nav {
-        width: 50%;
+        min-width: 65%;
         display: flex;
         // border: $debug;
         align-items: center;
         justify-content: space-evenly;
+        // border: 1px solid red;
         
         .nav-links {
 

@@ -9,7 +9,7 @@
     // border: 2px solid yellow;
     // overflow: scroll;
 
-    margin: 5% 1%;
+    // margin: 5% 1%;
 
    
     .profile-info {
@@ -54,10 +54,11 @@
     .board {
 
         // border: 1px solid red;
-        width: 50%;
+        max-width: 50%;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
+        margin: 8.5% 0;
 
         
 

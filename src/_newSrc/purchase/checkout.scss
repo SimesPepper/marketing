@@ -27,7 +27,8 @@
             font-size: .9rem;
 
             img {
-                width: 40%;
+
+                max-width: 40%;
             }
 
             p {
@@ -134,13 +135,15 @@
     form {
         box-sizing: border-box;
         background-color: white;
-        width: 20%;
+        max-width: 20%;
+        width: 18%;
+        min-width: 15%;
         padding: 2%;
         // height: 50vh;
 
        img {
 
-        width: 40%;
+        max-width: 40%;
         margin: auto;
        }
 
@@ -178,6 +181,13 @@
 
         .order-summary {
             width: 75%;
+
+            .item {
+
+                img {
+                    max-width: 40%;
+                }
+            }
         }
 
         form {

@@ -6,7 +6,8 @@ import Overlay from './Overlay';
 import Footer from '../footer/Footer';
 import ItemChoices from './ItemChoices';
 
-import '../index.scss';
+// import '../index.scss';
+import './home.scss';
 
 export default ({ cart, setCart, history, location, match }) => {
     
