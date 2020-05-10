@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import MediaQuery from 'react-responsive';
 import './header2.scss';
 
 export default props => {
 
-
+    console.log(props)
+    
     useEffect(() => {
 
         if(props.className === 'mobile'){
@@ -23,7 +24,14 @@ export default props => {
         <div className={`header2 ${props.className}`}>
 
             <MediaQuery minWidth={800}>
-                <img className="nav-logo" src={require('../../img/white_logo.png')} alt="si'me's pepper logo"/>
+
+                    <img 
+                        className="nav-logo"
+                        src={require('../../img/white_logo.png')}
+                        alt="si'me's pepper logo"
+                        onClick={e => props.history.replace('/')}
+                    />
+
             </MediaQuery>
 
             

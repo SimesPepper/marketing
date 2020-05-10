@@ -76,7 +76,8 @@ export default ({ cart, setCart, history, location, match }) => {
 
                 <Nav 
                     cart={cart} 
-                    className={className} 
+                    className={`${className} homepage`} 
+                    history={history}
                 />
             </MediaQuery>
 

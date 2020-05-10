@@ -143,7 +143,7 @@
 
        img {
 
-        max-width: 40%;
+        width: 40%;
         margin: auto;
        }
 
@@ -174,7 +174,6 @@
     @media (max-width: 790px) {
 
         margin: 0;
-        height: 100vh;
         flex-direction: column;
         justify-content: center;
 
@@ -183,8 +182,12 @@
 
             .item {
 
-                img {
-                    max-width: 40%;
+                width: 100%;
+                
+
+                .columns {
+
+                    width: 100%;
                 }
             }
         }

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import MediaQuery from 'react-responsive';
 
 
 export default props => {
@@ -8,7 +8,10 @@ export default props => {
         <div className="order-summary">
 
                 <div className="item" >
-                    <img src={require('../../img/simes_bottle_top_burned.png')} alt=""/>
+
+                    <MediaQuery minWidth={800}>
+                        <img src={require('../../img/simes_bottle_top_burned.png')} alt=""/>
+                    </MediaQuery>
 
                     <div className="columns">
                         <div className="cat">

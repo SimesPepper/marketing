@@ -81,9 +81,9 @@ const App = (props) => {
             <Route exact path="/" render={ props => <HomePage {...props} cart={cart} setCart={setCart} toggleMenu={toggleMenu} /> } />
             <Route path="/cart" render={ props => <Cart  cart={cart} setCart={setCart}  {...props} /> } />
             <Route path="/checkout" render={ props => <CheckoutForm {...props} /> } />
-            <Route path="/about" component={ About } />
-            <Route path="/social-board" component={ SocialBoard } />
-            <Route path="/contact-us" component={ ContactUs } />
+            <Route path="/about" render={ props => <About {...props} /> } />
+            <Route path="/social-board" render={ props => <SocialBoard {...props} /> } />
+            <Route path="/contact-us" render={ props => <ContactUs {...props} /> } />
             {/* <Route exact path='/' component={IntroCard} />
             <Route path="/about" component={AboutUs} /> 
             <Route path="/fan-board" component={FanBoard} />

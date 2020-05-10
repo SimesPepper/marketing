@@ -6,7 +6,7 @@ import Footer from '../footer/Footer';
 
 import './socialBoard.scss';
 
-export default _ => {
+export default props => {
 
     const [ state, setState ] = useState([
         {
@@ -75,7 +75,7 @@ export default _ => {
 
             <MediaQuery minWidth={800}>
 
-                <Header className="standard" />
+                <Header className="standard" history={props.history} />
             </MediaQuery>
             <MediaQuery maxWidth={790}>
 

@@ -55,9 +55,11 @@
 
         // border: 1px solid red;
         // max-width: 50%;
+        width: 75%;
+
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
+        gap: 2rem;
         margin: 8.5% 0;
 
         
@@ -71,7 +73,7 @@
             flex-direction: column;
             justify-content: space-between;
             // height: 25vh;
-            // width: 50%;
+            width: 95%;
             // margin-bottom: 15%;
     
             position: relative;
@@ -200,8 +202,8 @@
         cursor: pointer;
         
         position: fixed;
-        bottom: 17%;
-        right: 5%;
+        bottom: 3%;
+        right: 2%;
 
         &:hover {
 
@@ -213,11 +215,7 @@
 
     }
 
-    .footer2 {
-
-        position: fixed;
-        padding: .5%;
-    }
+ 
 
     @media (max-width: 790px) {
 
@@ -227,9 +225,8 @@
         padding: 4% 0;
 
         .board {
-            width: 75%;
             grid-template-columns: repeat(2, 1fr);
-
+            gap: 1rem;
             .post-item {
 
                 img {

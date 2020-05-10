@@ -5,7 +5,7 @@ import Header from '../header/Nav';
 import Footer from '../footer/Footer';
 
 import './contact.scss'
-export default _ => {
+export default props => {
 
     return (
 
@@ -18,7 +18,7 @@ export default _ => {
 
             <MediaQuery minWidth={800}>
 
-                <Header className="standard" />
+                <Header className="standard" history={props.history} />
             </MediaQuery>
 
             <form >

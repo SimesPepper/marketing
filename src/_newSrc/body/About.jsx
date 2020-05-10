@@ -6,14 +6,14 @@ import Footer from '../footer/Footer';
 
 import './about.scss';
 
-export default _ => {
+export default props => {
 
     return(
 
         <div className="about">
             <MediaQuery minWidth={800}>
 
-                <Nav className="standard"/>
+                <Nav className="standard" history={props.history} />
             </MediaQuery>
 
             <MediaQuery maxWidth={790}>
