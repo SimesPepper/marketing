@@ -12,12 +12,10 @@ export default props => {
 
         <div className="about">
             <MediaQuery minWidth={800}>
-
                 <Nav className="standard" history={props.history} />
             </MediaQuery>
 
             <MediaQuery maxWidth={790}>
-
                 <Nav className="mobile" />
             </MediaQuery>
 

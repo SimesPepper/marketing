@@ -59,7 +59,17 @@
     }
 
 
+
+    @media (max-width: 1400px) {
+
+       background-size: initial;
+       background-position: left center;
+
+    }
+
+
     @media (max-width: 790px) {
+
 
         .home{
             
@@ -70,6 +80,7 @@
             // padding: 5%;
             // display: flex;
             opacity: .55;
+            height: 100vh;
             // max-height: 130vh;
             // min-height: 100vh;
     

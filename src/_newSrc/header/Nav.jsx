@@ -4,8 +4,6 @@ import MediaQuery from 'react-responsive';
 import './header2.scss';
 
 export default props => {
-
-    console.log(props)
     
     useEffect(() => {
 

@@ -5,24 +5,26 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import MediaQuery from 'react-responsive';
 
 import './checkout.scss';
+import './checkout_form.scss';
+
 import Footer from '../footer/Footer';
 import Nav from '../header/Nav';
 import OrderSummary from './OrderSummary';
 
 const Form = props => {
     
-    console.log(props)
-    
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('')
-    const [amount, setAmount] = useState(0)
+
     const [address, setAddress] = useState({
         line1: '',
         line2: '',
         city: '',
         state: ''
     })
-    const [lastName, setLastName] = useState('');
-    const [firstName, setFirstName] = useState('');
+
+    const [amount, setAmount] = useState(0)
     const [buttonActive, setButtonActive] = useState(true)
 
     useEffect(() => {
@@ -51,30 +53,51 @@ const Form = props => {
 
     const handleSubmit = async e => {
         e.preventDefault();
-        // const amount = props.pepperState.price
-        // console.log(amount)
 
         setButtonActive(false)
+
+        //Errors comes in at res -> data -> error -> code || raw -> message
 
         try{
             
             let token = await props.stripe.createToken({
                 name: `${firstName} ${lastName}`
             })
-            const res = await Axios.post('https://simes-pepper.herokuapp.com/checkout', {token, firstName, lastName, amount, address, email})
-            // const res = await Axios.post('http://localhost:3003/checkout', {token, name, amount, address, email})
-            setFirstName('')
-            setLastName('')
-            console.log(res)
+            // const res = await Axios.post('https://simes-pepper.herokuapp.com/checkout', {token, name:`${firstName}, ${lastName}`, amount, address, email})
+            const res = await Axios.post('http://localhost:3003/checkout', {token, name:`${firstName}, ${lastName}`, amount, address, email})
+        
             
-            // if (props.setOpen) props.setOpen(res)
+            if (res.data.error){
 
-            // props.history.push({pathname:'/checkout-complete', state:{receipt: res.data.receipt}})
+                alert(res.data.error.raw.message)
+                setButtonActive(true)
+            } else {
+
+                setButtonActive(true)
+
+                setFirstName('')
+                setLastName('')
+                setEmail('')
+
+                setAddress({
+                    line1: '',
+                    line2: '',
+                    city: '',
+                    state: ''
+                })
+
+                setAmount(0)
+
+                window.location.assign(`${res.data.receipt}`)
+
+            }
+            
+
+            
             //needs to redirect back to homepage
         }catch(error){
 
             console.log(error)
-            // props.history.push('/checkout-complete')
 
         }
 
@@ -108,7 +131,7 @@ const Form = props => {
             />
 
             
-            <form onSubmit={e => handleSubmit(e)}>
+            <form onSubmit={handleSubmit}>
 
                 <img src={require('../../img/white_logo.png')} alt=""/>
                 <div className="names">

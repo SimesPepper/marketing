@@ -7,14 +7,6 @@ import './itemChoice.scss'
 
 export default ({ choices, chosen, setChosen, cart, setCart, history, location }) => {
 
-    console.log(location)
-
-    const handlePurchase = item => { //only doing this because i really dont want to redo my button styles
-
-        history.push('/checkout')
-
-    }
-
 
     return (
 
@@ -41,7 +33,7 @@ export default ({ choices, chosen, setChosen, cart, setCart, history, location }
 
                                     <h1 className={item.heat} >{item.heat.toUpperCase()}</h1>
                                     <h1 className={`price ${item.subClass}`} >$7.99</h1>
-                                    <p>
+                                    <p className="tag">
                                         {item.description}
                                     </p>
                                 </div>

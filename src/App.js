@@ -9,12 +9,7 @@ import {StripeProvider, Elements} from 'react-stripe-elements';
 import { Controller, Scene } from 'react-scrollmagic';
 
 import Footer from './_newSrc/footer/Footer';
-import AboutUs from './Components/AboutUs'
-import Contact from './Components/Contact';
 import Cart from './_newSrc/purchase/Cart';
-import FanBoard from './Components/FanBoard';
-import Header from './Components/head/Header'; 
-import IntroCard from './Components/IntroCard';
 import CheckoutForm from './_newSrc/purchase/CheckoutForm';
 
 import HomePage from './_newSrc/body/HomePage';
@@ -59,7 +54,7 @@ const App = (props) => {
   return (
     <StripeProvider
       stripe={stripe}
-      apiKey={ process.env.APIKEY  || "pk_live_adoCNhh7KNUkcjSnyRScAH1A00SPJuwx04" }
+      apiKey="pk_live_adoCNhh7KNUkcjSnyRScAH1A00SPJuwx04" 
     >
       <Elements>
 

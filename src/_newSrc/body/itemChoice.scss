@@ -111,6 +111,11 @@
 
             p {
                 text-align: left;
+
+                @media (max-width: 1300px) {
+
+                    display: none;
+                }
             };
 
             .hott {
@@ -351,6 +356,7 @@
                     justify-content: space-evenly;
 
                 }
+
             }
 
             .buttons {
